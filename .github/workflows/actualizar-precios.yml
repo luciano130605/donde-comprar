@@ -2,9 +2,8 @@ name: Actualizar precios
 
 on:
   schedule:
-    # 11:17 UTC = 8:17 de la mañana en Argentina. Se evita la hora en punto porque GitHub la satura.
     - cron: '17 11 * * *'
-  workflow_dispatch: # permite correrlo a mano desde la pestaña Actions
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,15 +23,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Cada fuente corre por separado y una que falle no frena a las otras. Si un sitio bloquea el pedido y casi
-      # no vuelven productos, el script falla y NO pisa los precios anteriores.
-      - name: Precios de las tiendas online (todo el país)
+      - name: Precios de las tiendas online
         run: npm run datos:online
         continue-on-error: true
-      - name: Precios por zona (Precios Claros, SEPA)
+      - name: Precios por zona SEPA
         run: npm run datos:sepa
         continue-on-error: true
-      - name: Promos de Coto y Día (quedan para revisar, no se publican solas)
+      - name: Promos de Coto y Dia para revisar
         run: npm run promos:scrape
         continue-on-error: true
       - name: Guardar precios nuevos
