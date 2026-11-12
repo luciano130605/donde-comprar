@@ -5,6 +5,10 @@ import { disponiblesHoy, estadoRegla, NOMBRES_DIA } from '../lib/promos.js';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
   Search01Icon, FilterMailIcon, Tag01Icon, DiscountIcon, ArrowUpRight01Icon, ArrowDown01Icon, Tick02Icon, Moon02Icon, Sun03Icon, PackageIcon, DrinkIcon, MilkBottleIcon, SteakIcon, AppleIcon, IceCream01Icon, CleanIcon, BodySoapIcon, BabyBottleIcon, PawPrintIcon, Home01Icon, GridViewIcon,
+  Package01Icon,
+  CheeseIcon,
+  IceCubesIcon,
+  ElectricHome02Icon,
 } from '@hugeicons/core-free-icons';
 
 const peso = (n) => '$' + Math.round(n).toLocaleString('es-AR');
@@ -35,17 +39,17 @@ const ICONOS = {
   check: Tick02Icon,
   luna: Moon02Icon,
   sol: Sun03Icon,
-  'Almacén': PackageIcon,
-  'Bebidas': DrinkIcon,
-  'Lácteos y frescos': MilkBottleIcon,
+  'Almacén': Package01Icon,
+  'Bebidas': MilkBottleIcon,
+  'Lácteos y frescos': CheeseIcon,
   'Carnes y pescados': SteakIcon,
   'Frutas y verduras': AppleIcon,
-  'Congelados': IceCream01Icon,
+  'Congelados': IceCubesIcon,
   'Limpieza': CleanIcon,
   'Perfumería e higiene': BodySoapIcon,
   'Bebés y niños': BabyBottleIcon,
   'Mascotas': PawPrintIcon,
-  'Hogar y electro': Home01Icon,
+  'Hogar y electro': ElectricHome02Icon,
   'Otros': GridViewIcon,
 };
 function Icono({ n, className = '' }) {
@@ -496,7 +500,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
                   <ul className="divide-y divide-borde">{g.items.map(filaProducto)}</ul>
                   {g.total > g.items.length && (
                     <button type="button" onClick={() => { setRubro(g.rubro); window.scrollTo({ top: 0 }); }} className="mt-1 flex h-11 w-full items-center justify-center gap-1.5 rounded-2xl bg-suave font-bold text-suave-texto transition-opacity hover:opacity-85">
-                      Ver más {g.rubro} <Icono n="flecha" className="h-4 w-4" />
+                      Ver más {g.rubro}
                     </button>
                   )}
                 </section>
