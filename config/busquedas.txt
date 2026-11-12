@@ -1,0 +1,29 @@
+# Una búsqueda por línea. El scraper trae los primeros resultados de cada una en cada supermercado.
+leche
+manteca
+yogur
+queso cremoso
+yerba
+azucar
+harina
+fideos
+arroz
+aceite de girasol
+atun
+puré de tomate
+café molido
+galletitas
+pan lactal
+huevos
+gaseosa cola
+agua mineral
+cerveza
+vino malbec
+papel higiénico
+lavandina
+detergente
+jabón de tocador
+shampoo
+mermelada
+dulce de leche
+sal fina

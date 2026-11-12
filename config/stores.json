@@ -1,0 +1,95 @@
+{
+  "zonas": [
+    {
+      "id": "caba",
+      "nombre": "CABA",
+      "provincia": "AR-C",
+      "localidad": ""
+    },
+    {
+      "id": "buenos-aires",
+      "nombre": "Buenos Aires",
+      "provincia": "AR-B",
+      "localidad": ""
+    }
+  ],
+  "minBanderas": 2,
+  "maxProductos": 150000,
+  "banderas": [
+    {
+      "id": "coto",
+      "nombre": "Coto",
+      "patron": "coto"
+    },
+    {
+      "id": "dia",
+      "nombre": "Día",
+      "patron": "^d[ií]a\\b|d[ií]a %|supermercados d[ií]a"
+    },
+    {
+      "id": "jumbo",
+      "nombre": "Jumbo",
+      "patron": "jumbo"
+    },
+    {
+      "id": "carrefour",
+      "nombre": "Carrefour",
+      "patron": "carrefour|^inc s\\.?a\\.?$"
+    },
+    {
+      "id": "disco",
+      "nombre": "Disco",
+      "patron": "^disco"
+    },
+    {
+      "id": "vea",
+      "nombre": "Vea",
+      "patron": "^vea\\b|supermercados vea"
+    },
+    {
+      "id": "changomas",
+      "nombre": "Changomás",
+      "patron": "chango ?m[aá]s|m[aá]s online|masonline"
+    },
+    {
+      "id": "cordiez",
+      "nombre": "Cordiez",
+      "patron": "cordiez"
+    },
+    {
+      "id": "josimar",
+      "nombre": "Josimar",
+      "patron": "josimar"
+    },
+    {
+      "id": "vital",
+      "nombre": "Vital",
+      "patron": "\\bvital\\b"
+    },
+    {
+      "id": "laanonima",
+      "nombre": "La Anónima",
+      "patron": "la an[oó]nima|imp\\. y exp\\. de la patagonia"
+    },
+    {
+      "id": "coopobrera",
+      "nombre": "Coop. Obrera",
+      "patron": "cooperativa obrera"
+    },
+    {
+      "id": "toledo",
+      "nombre": "Toledo",
+      "patron": "toledo"
+    },
+    {
+      "id": "unicoop",
+      "nombre": "Unicoop",
+      "patron": "unicoop"
+    },
+    {
+      "id": "marianomax",
+      "nombre": "Mariano Max",
+      "patron": "mariano max|^mariano s\\.?a"
+    }
+  ]
+}

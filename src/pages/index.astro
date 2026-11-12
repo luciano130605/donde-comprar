@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Comparador from '../components/Comparador.jsx';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comparador de Súper</title>
+    <meta name="description" content="Compará el precio de tu lista de compras en los principales supermercados de Argentina." />
+    <meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2a1327" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d6b4d">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Comparador de Súper">
+    <meta property="og:description" content="Compará tu lista de compras en Coto, Día, Jumbo, Carrefour y Disco.">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:image" content="https://TU-DOMINIO/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script is:inline>
+      // Aplica el tema elegido antes de pintar para evitar el parpadeo. Sin elección, manda el del sistema.
+      try { var t = localStorage.getItem('super-tema'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Comparador client:load />
+  </body>
+</html>

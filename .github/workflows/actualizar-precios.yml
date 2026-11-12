@@ -1,0 +1,48 @@
+name: Actualizar precios
+
+on:
+  schedule:
+    # 11:17 UTC = 8:17 de la mañana en Argentina. Se evita la hora en punto porque GitHub la satura.
+    - cron: '17 11 * * *'
+  workflow_dispatch: # permite correrlo a mano desde la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar-precios
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Cada fuente corre por separado y una que falle no frena a las otras. Si un sitio bloquea el pedido y casi
+      # no vuelven productos, el script falla y NO pisa los precios anteriores.
+      - name: Precios de las tiendas online (todo el país)
+        run: npm run datos:online
+        continue-on-error: true
+      - name: Precios por zona (Precios Claros, SEPA)
+        run: npm run datos:sepa
+        continue-on-error: true
+      - name: Promos de Coto y Día (quedan para revisar, no se publican solas)
+        run: npm run promos:scrape
+        continue-on-error: true
+      - name: Guardar precios nuevos
+        run: |
+          git config user.name "precios-bot"
+          git config user.email "precios-bot@users.noreply.github.com"
+          git add public/precios public/zonas.json config/promos.generated.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Precios del $(date -u +%F)"
+            git push
+          fi

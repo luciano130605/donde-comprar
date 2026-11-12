@@ -1,0 +1,32 @@
+{
+  "predeterminada": "caba",
+  "zonas": [
+    {
+      "id": "caba",
+      "nombre": "CABA",
+      "archivo": "precios/caba.json",
+      "fuente": "sepa",
+      "actualizado": "2026-11-12T09:30:00-03:00",
+      "productos": 13057,
+      "tiendas": 4
+    },
+    {
+      "id": "buenos-aires",
+      "nombre": "Buenos Aires",
+      "archivo": "precios/buenos-aires.json",
+      "fuente": "sepa",
+      "actualizado": "2026-11-12T09:30:00-03:00",
+      "productos": 17352,
+      "tiendas": 8
+    },
+    {
+      "id": "online",
+      "nombre": "Tiendas online (todo el país)",
+      "archivo": "precios/online.json",
+      "fuente": "online",
+      "actualizado": "2026-11-12T17:19:27.336Z",
+      "productos": 20295,
+      "tiendas": 9
+    }
+  ]
+}

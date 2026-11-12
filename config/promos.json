@@ -1,0 +1,47 @@
+{
+  "_ayuda": "Una regla por promo. Los campos que no se vieron en la fuente quedan en null y se listan en 'aVerificar'. dias: 0=domingo ... 6=sábado (null = sin restricción conocida). Ver README.",
+  "medios": [
+    { "id": "debito", "nombre": "Tarjeta de débito" },
+    { "id": "mercadopago", "nombre": "Mercado Pago" }
+  ],
+  "reglas": [
+    {
+      "id": "coto-debito-ejemplo",
+      "tienda": "coto",
+      "medioPago": "debito",
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": null,
+      "canal": "ambos",
+      "acumulable": false,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "verificadaEl": null,
+      "estado": "ejemplo, verificar",
+      "aVerificar": ["valor", "tope", "topePeriodo", "minimo", "dias", "canal", "vigencia", "medioPago"]
+    },
+    {
+      "id": "dia-miercoles-mercadopago-ejemplo",
+      "tienda": "dia",
+      "medioPago": "mercadopago",
+      "tipo": "porcentaje",
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": 20000,
+      "dias": [3],
+      "canal": "ambos",
+      "acumulable": false,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "verificadaEl": null,
+      "estado": "ejemplo, verificar",
+      "aVerificar": ["valor", "tipo", "tope", "topePeriodo", "canal", "vigencia"]
+    }
+  ]
+}

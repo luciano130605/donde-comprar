@@ -1,0 +1,26 @@
+{
+  "name": "precios-super",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "datos:ejemplo": "node scripts/make-sample.mjs ./sepa-ejemplo && node scripts/build-prices.mjs ./sepa-ejemplo --ejemplo",
+    "datos": "node scripts/build-prices.mjs",
+    "datos:online": "node scripts/scrape-online.mjs",
+    "datos:sepa": "node scripts/descargar-sepa.mjs",
+    "promos:scrape": "node scripts/scrape-promos.mjs",
+    "promos:revisar": "node scripts/revisar-promos.mjs",
+    "test": "node --test test/online.test.mjs test/promos.test.mjs test/promos-scrapers.test.mjs test/rubros.test.mjs"
+  },
+  "dependencies": {
+    "@astrojs/react": "7.1.8",
+    "@tailwindcss/vite": "4.3.5",
+    "astro": "7.4.11",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "4.3.5"
+  }
+}

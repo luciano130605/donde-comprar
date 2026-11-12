@@ -1,0 +1,2230 @@
+{
+  "revisar": true,
+  "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
+  "generadoEl": "2026-11-12T16:20:37.038Z",
+  "fuentes": [
+    "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+    "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
+  ],
+  "reglas": [
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-445",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa y Mastercard.",
+      "bancoId": 49,
+      "icono": "logo_columbia_1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": 20000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-457",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "PLAN SUELDO En un pago con tarjetas de crédito Visa, Mastercard y Visa débito.",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Tope de Reintegro de $20.000 por transacción. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-482",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito TCI",
+      "bancoId": 8,
+      "icono": "logo_tci.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-439",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de Visa débito y débito Maestro.",
+      "bancoId": 16,
+      "icono": "logo_ciudad1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Válido para el Sábado 14/11/2026 y Domingo 15/11/2026. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Sabado y Domingo"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 15000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-456",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa, Mastercard y Visa débito.",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Tope de reintegro de $15.000 por transacción. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 25000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-461",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas crédito y débito Visa",
+      "bancoId": 20,
+      "icono": "logo_patagonia2.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Tope de reintegro $25.000 por transacción. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-465",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "SGTO IDENTITÉ En un pago con tarjetas de crédito Visa y Mastercard.",
+      "bancoId": 62,
+      "icono": "logo_supervielle2.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-464",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa y Mastercard, y con tarjetas de débito Visa.",
+      "bancoId": 62,
+      "icono": "logo_supervielle2.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 30000,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-440",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa, Mastercard y Cabal",
+      "bancoId": 16,
+      "icono": "logo_ciudad1.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Tope de reintegro $30.000. En compras en un pago. Aplica en los productos sin oferta, aplican excluidos, ver legales.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "topePeriodo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-449",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Cabal y Débito Cabal",
+      "bancoId": 35,
+      "icono": "logo_credicoop.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 35,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-447",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas crédito y débito Visa",
+      "bancoId": 17,
+      "icono": "logo_comafi2.png",
+      "textoOriginal": {
+        "textoDescuento": "35% DE DESCUENTO",
+        "observacion": "Cartera general con tope de reintegro $ 15.000 por transacción, para Segmento Unico tope de reintegro $ 25.000 por transacción. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
+        "vigencia"
+      ],
+      "notas": "La observación menciona más de un tope: elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": 12000,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-477",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Tope de reintegro $12.000 por semana para clientes adheridos a Plan Épico de NaranjaX",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 9500,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-475",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Tope de reintegro $ 9.500 por semana para clientes adheridos a Plan Turbo de NaranjaX",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 3000,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-473",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Tope de reintegro: $3.000 por semana para clientes adheridos a planes de suscripción - Plan inicial",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-527",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En compras presenciales pagando desde tu celular CON VISA DÉBITO NFC con Bancos seleccionados.",
+      "bancoId": 0,
+      "icono": "logo_visa1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 30000,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-437",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Pagando con MODO desde la app de Ciudad con tarjetas de crédito del banco",
+      "bancoId": 16,
+      "icono": "logo_ciudad1.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Tope de reintegro $30.000. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "topePeriodo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-438",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de Visa débito y débito Maestro.",
+      "bancoId": 16,
+      "icono": "logo_ciudad1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Válido para el Sábado 14/11/2026 y Domingo 15/11/2026. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Sabado y Domingo"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-444",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa y Mastercard.",
+      "bancoId": 49,
+      "icono": "logo_columbia_1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        5
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-459",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
+      "bancoId": 0,
+      "icono": "logo_mercadopago.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Viernes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-460",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Pagando con QR desde la app de tu banco o app MODO",
+      "bancoId": 0,
+      "icono": "logo_modo.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        3
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-467",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago si sos miembro de nuestra Comunidad. Con todos los medios de pago",
+      "bancoId": 0,
+      "icono": "logo_comunidad.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Siendo miembro de Comunidad Coto - Aplican exclusiones. Ver legales - Sin límite de reintegro.",
+        "diasVigencia": "Miercoles"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        3
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-435",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito y débito.",
+      "bancoId": 0,
+      "icono": "logo_beneficios_anses.png",
+      "textoOriginal": {
+        "textoDescuento": "10% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Miercoles"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-466",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Pagando con MODO desde la app de Supervielle con tarjetas de débito y crédito del banco",
+      "bancoId": 62,
+      "icono": "logo_supervielle2.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. No acumula con promo Modo martes. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-433",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito y débito.",
+      "bancoId": 0,
+      "icono": "logo_beneficios_anses.png",
+      "textoOriginal": {
+        "textoDescuento": "10% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-453",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de Visa débito.",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-448",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Abonando con tarjetas de débito y crédito Cabal y crédito Visa Credicoop exclusivo desde APP BANCA CREDICOOP con MODO.",
+      "bancoId": 35,
+      "icono": "logo_credicoop.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-458",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con todos los medios de pago, presentando DNI",
+      "bancoId": 0,
+      "icono": "logo_jubiladosypensionados.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Para todos los jubilados y pensionados, en un pago con todos los medios de pago presentando DNI. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-436",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito y débito.",
+      "bancoId": 0,
+      "icono": "logo_beneficios_anses.png",
+      "textoOriginal": {
+        "textoDescuento": "10% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-443",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Pagando con MODO desde la app de Columbia con tarjetas de débito y crédito del banco",
+      "bancoId": 49,
+      "icono": "logo_columbia_1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. No acumula con promo Modo martes. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-442",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Programa ciudadanía porteña",
+      "bancoId": 0,
+      "icono": "logo_ciudadania_portena.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 35,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-446",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Pagando con MODO desde la app de Comafi con tarjetas de débito y crédito del banco",
+      "bancoId": 17,
+      "icono": "logo_comafi2.png",
+      "textoOriginal": {
+        "textoDescuento": "35% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. No acumula con promo Modo martes. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": 12000,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-476",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Tope de reintegro $12.000 por semana para clientes adheridos a Plan Épico de NaranjaX",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 9500,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-474",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Tope de reintegro $ 9.500 por semana para clientes adheridos a Plan Turbo de NaranjaX",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 3000,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-472",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjeta de crédito Naranja X o tarjeta Débito Naranja X VISA.",
+      "bancoId": 76,
+      "icono": "logo_naranjax2.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Tope de reintegro: $3.000 por semana para clientes adheridos a planes de suscripción - Plan inicial",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-434",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito y débito.",
+      "bancoId": 0,
+      "icono": "logo_beneficios_anses.png",
+      "textoOriginal": {
+        "textoDescuento": "10% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-441",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Programa ciudadanía porteña",
+      "bancoId": 0,
+      "icono": "logo_ciudadania_portena.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 10000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        1,
+        5
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": "2026-04-01",
+      "vigenteHasta": "2026-09-30",
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-columbia-3tbrmn",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco Columbia",
+      "textoOriginal": {
+        "titulo": "Columbia 20% de reintegro",
+        "terms": "CARTERA DE CONSUMO.VIGENCIA DESDE EL 01/04/2026 HASTA EL 30/09/2026 AMBAS FECHAS INCLUSIVE. PARA COMPRAS REALIZADAS ÚNICAMENTE LOS DIAS LUNES Y VIERNES EN LAS SUCURSALES DE SUPERMERCADOS DIA UBICADAS EN EL TERRITORIO DE LA REPÚBLICA ARGENTINA CON LAS TARJETAS DE CREDITO VISA Y MASTERCARD EMITIDAS POR BANCO COLUMBIA. 20% DE AHORRO EN COMPRAS EN UN PAGO, TOPE DE REINTEGRO $10.000 (DIEZ MIL PESOS) POR TRANSACCION. EJEMPLO: COMPRA REALIZADA EN 1 PAGO DE $1000 RECIBIRÁ UN REINTEGRO DE $200. LA BONIFICACIONES SE VERÁN REFLEJADAS HASTA EN LOS 2 RESÚMENES SIGUIENTES AL QUE REFLEJE LA/S TRANSACCIÓN/ES."
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1,
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-tarjeta-ba-1c2c92b",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Tarjeta BA",
+      "textoOriginal": {
+        "titulo": "Ciudadania Portena",
+        "terms": "PROMOCIÓN VIGENTE DESDE EL 01/01/2026 AL 31/05/2026 INCLUSIVE EN LOS SUPERMERCADOS DIA DE LA CIUDAD\nAUTONÓMA DE BUENOS AIRES PARA COMPRAS REALIZADAS LOS DÍAS LUNES Y JUEVES. VÁLIDA PARA TARJETA\nPRECARGADA SOCIAL PERTENECIENTE AL PROGRAMA CIUDADANÍA PORTEÑA DEL GOBIERNO DE LA CIUDAD DE BUENOS\nAIRES. SE OTORGARÁ 15% DE REINTEGRO POR EL TOTAL DE LA COMPRA SIN TOPE DE REINTEGRO. EL REINTEGRO SE\nREALIZARÁ EN LA TARJETA DENTRO DE LOS SIGUIENTES 10 DÍAS HÁBILES. SERÁ CONDICIÓN ESENCIAL, AL MOMENTO DE\nEFECTUAR EL REINTEGRO, QUE LA TARJETA SE ENCUENTRE VIGENTE Y EN ESTADO DE CUMPLIMIENTO NORMAL. LA\nPRE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-naranja-amg6hr",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Naranja",
+      "textoOriginal": {
+        "titulo": "Naranja X Plan Z",
+        "terms": "PROMOCIÓN VIGENTE DESDE EL 01/01/2026 AL 31/05/2026 INCLUSIVE EN LOS SUPERMERCADOS DIA DE LA CIUDAD\nAUTONÓMA DE BUENOS AIRES PARA COMPRAS REALIZADAS LOS DÍAS LUNES Y JUEVES. VÁLIDA PARA TARJETA\nPRECARGADA SOCIAL PERTENECIENTE AL PROGRAMA CIUDADANÍA PORTEÑA DEL GOBIERNO DE LA CIUDAD DE BUENOS\nAIRES. SE OTORGARÁ 15% DE REINTEGRO POR EL TOTAL DE LA COMPRA SIN TOPE DE REINTEGRO. EL REINTEGRO SE\nREALIZARÁ EN LA TARJETA DENTRO DE LOS SIGUIENTES 10 DÍAS HÁBILES. SERÁ CONDICIÓN ESENCIAL, AL MOMENTO DE\nEFECTUAR EL REINTEGRO, QUE LA TARJETA SE ENCUENTRE VIGENTE Y EN ESTADO DE CUMPLIMIENTO NORMAL. LA\nPRE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-personal-pay-3sxned",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Personal Pay",
+      "textoOriginal": {
+        "titulo": " Personal Pay",
+        "terms": "BENEFICIO DE ALCANCE NACIONAL, VÁLIDO LOS DÍAS JUEVES COMPRENDIDOS DESDE EL 23/04/2026 HASTA EL 31/05/2026. LA PROMOCIÓN CONSISTE EN UN 15% (QUINCE POR CIENTO) DE REINTEGRO PAGANDO CON TARJETA PREPAGA VISA DE PERSONAL PAY (FÍSICA O VIRTUAL), CÓDIGO QR, NFC Y/O CUALQUIER OTRO MEDIO DE PAGO HABILITADO POR PERSONAL PAY EN LA BILLETERA DIGITAL, SIN TOPE DE REINTEGRO, SIN MÍNIMO DE COMPRA, MÁXIMO UNA TRANSACCIÓN POR JUEVES POR USUARIO. EL REINTEGRO SERÁ APLICADO EN LA BILLETERA DENTRO DE LAS 72HS DE REALIZADA LA OPERACIÓN. EXCLUSIVO EN TIENDAS FÍSICAS Y EL SITIO WEB WWW.DIAONLINE.COM.AR . PARA MÁS "
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-anses-1cjyf63",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Anses",
+      "textoOriginal": {
+        "titulo": "Anses",
+        "terms": "\"VALIDA PARA TODAS LAS TIENDAS DIA DEL PAÍS EXCEPTO LAS FRANQUICIAS TRADICIONALES (*). PROMOCIÓN ACUMULABLE CON LOS DESCUENTO DE FIDELIZACIÓN. EL DESCUENTO NO SE REALIZA EN LA LÍNEA DE CAJAS SINO QUE SE REINTEGRARÁ EN LA TARJETA DENTRO DE LOS 10 DÍAS HÁBILES DESDE LA FECHA DE COMPRA. ANSES LIMITARÁ SU RESPONSABILIDAD EXCLUSIVAMENTE A LA PROMOCIÓN, PUBLICIDAD Y DIFUSIÓN DE PRODUCTOS Y/O SERVICIOS OFERTADOS POR LOS COMERCIOS ADHERIDOS AL PROGRAMA DE BENEFICIOS ANSES. ANSES NO ES INTERMEDIARIO DE LA OFERTA Y NO SERÁ RESPONSABLE POR LOS DAÑOS Y PERJUICIOS QUE PUDIERAN SUFRIR LOS BENEFICIARIOS DEL "
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 0,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-visa-1ywss16",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Visa, Master Card, Cabal, American Express",
+      "textoOriginal": {
+        "titulo": "3CSI TC",
+        "terms": "CARTERA DE CONSUMO. PROMOCIÓN VÁLIDA PARA TODOS LOS DÍAS SÁBADO DEL 01/01/2026 AL 31/05/2026 EN TODAS LAS TIENDAS DIA Y WWW.DIAONLINE.COM.AR. PLAN 3 CUOTAS SIN INTERÉS CON LAS TARJETAS VISA, MASTERCARD, AMERICAN EXPRESS Y CABAL EMITIDAS EN LA REPÚBLICA ARGENTINA. EXCLUYE TARJETAS MASTERCARD CENCOSUD. VÁLIDO PARA COMPRAS CON TARJETA FÍSICA. DIA ARGENTINA S.A., DOMICILIO AV. RIVADAVIA 8875 1° PISO, CIUDAD AUTÓNOMA DE BUENOS AIRES, CUIT: 30-68584975-1. TEM: 0,00% - TNA: 0,00% - TEA: 0,00% - CFTNA: 0,00%"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-sidecreer-cpo080",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Sidecreer",
+      "textoOriginal": {
+        "titulo": "Sidecreer BLACK",
+        "terms": "SIDECREER VERDE\n\nPROMOCIÓN PRODUCTOS SIDECREER VERDE Y SIDECREER COMÚN/CLÁSICA - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 10% DE DESCUENTO (CON TOPE DE $2.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/01/2026 AL 30/06/2026, AMBAS FE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "tope",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (10, 0,00, 20, 25%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 10000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-del-sol-kbyodg",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco del Sol",
+      "textoOriginal": {
+        "titulo": "Nueva card",
+        "terms": "CARTERA DE CONSUMO. LA PRESENTE ACCIÓN PROMOCIONAL ES ORGANIZADA POR BANCO DEL SOL S.A., CUIT N° 30-67793756-0, CON DOMICILIO EN AV. LEANDRO N. ALEM 1058, PB, CIUDAD AUTÓNOMA DE BUENOS AIRES (EN ADELANTE «EL BANCO” O “BDS»). PROMOCIÓN EXCLUSIVA PARA CLIENTES DE BDS QUE SE HAYAN REGISTRADO A TRAVÉS DE LA APLICACIÓN DEL BANCO Y QUE REALICEN COMPRAS A TRAVÉS DE LA APLICACIÓN DE MODO CON LA TARJETA DE DÉBITO VISA O CON LA TARJETA DE CRÉDITO MASTERCARD EMITIDA POR EL BANCO, TODOS LOS MARTES DESDE LAS 00:00HS DEL 01/01/2026, HASTA LAS 23:59HS DEL 30/06/2026 AMBAS INCLUSIVE (EN ADELANTE EL “PLAZO”), "
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": 1,
+      "dias": [
+        3
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-mercado-pago-wdrghv",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Mercado Pago",
+      "textoOriginal": {
+        "titulo": "Mercado Pago",
+        "terms": "CAMPAÑA NÚMERO 12661624. BENEFICIO VÁLIDO EN MERCADO PAGO DE ARGENTINA (I) DEL 01/05/2026 00:01 AL 31/05/2026 23:59 LOS DÍAS MIÉRCOLES, INCLUYENDO AMBAS FECHAS; O (II) MIENTRAS DURE EL STOCK DE CUPONES; O (III) HASTA ALCANZAR LA CANTIDAD DE $ 800000000 EN DESCUENTOS CONCEDIDOS A LOS USUARIOS, LO QUE SUCEDA PRIMERO, PARA PAGOS REALIZADOS A TRAVÉS DEL SERVICIO DE GESTIÓN DE PAGOS DE MERCADO PAGO, OPERADO POR MERCADOPAGO.COM REPRESENTACIONES LTDA. (“MERCADO PAGO”) EN LAS APPS DE MERCADO PAGO. EL BENEFICIO CONSISTE EN 10% EN PRODUCTOS O SERVICIOS SELECCIONADOS, EL LÍMITE DE DESCUENTO DEL BENEFICIO"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 0,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-naranja-1928k1c",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Naranja",
+      "textoOriginal": {
+        "titulo": "3CI - Naranja",
+        "terms": "PLAN Z CERO INTERÉS COSTO FINANCIERO TOTAL (CFT) 0% TASA EFECTIVA ANUAL (TEA) 0% TASA NOMINAL ANUAL (TNA) 0%. BENEFICIO VÁLIDO PARA TITULARES Y ADICIONALES DE TARJETA DE CRÉDITO NARANJA X DE TODO EL PAÍS QUE COMPREN EN PLAN Z CERO INTERÉS: COSTO FINANCIERO TOTAL (CFT) 0% TASA EFECTIVA ANUAL (TEA) 0% TASA NOMINAL ANUAL (TNA) 0%"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-cuenta-dni-1bm8hff",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Cuenta DNI",
+      "textoOriginal": {
+        "titulo": "Cuenta DNI",
+        "terms": "PROMOCIÓN VÁLIDA LOS LUNES DE MAYO DEL 2026, PARA COMPRAS REALIZADAS A TRAVÉS DE LA FUNCIONALIDAD \"PAGO CLAVE DNI\" DE LA APLICACIÓN CUENTA DNI EN LOS COMERCIOS ADHERIDOS BAJO EL NOMBRE DE \"DIA\" ADHERIDOS. LA NÓMINA DE ADHERIDOS SE PODRÁ CONSULTAR EN WWW.BANCOPROVINCIA.COM.AR. BONIFICACIÓN DEL 10%. SIN TOPE DE REINTEGRO. SE DARÁ UN REINTEGRO QUE SE VERÁ REFLEJADO EN LOS MOVIMIENTOS DE LA CUENTA VINCULADA A CUENTA DNI AL MOMENTO DEL CONSUMO, DENTRO DE LOS 10 DÍAS HÁBILES SIGUIENTES DE REALIZADA LA COMPRA. EL BENEFICIO NO APLICA A CLIENTES QUE REGISTRAN ATRASO EN EL PAGO DE SUS OBLIGACIONES CON E"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 20000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-modo-xxudju",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Modo",
+      "textoOriginal": {
+        "titulo": "20% - MODO",
+        "terms": "PROMOCIÓN ORGANIZADA POR PLAY DIGITAL S.A., CUIT 30-71682943-6, CON DOMICILIO EN AV. DEL LIBERTADOR 7208, TORRE PRINCIPAL, PISO 3, OFICINA 3.1 CABA (“PDSA”). SERÁN IGUALMENTE DE APLICACIÓN A ESTA PROMOCIÓN LOS TÉRMINOS Y CONDICIONES DE LA APP MODO DISPONIBLES EN HTTPS://WWW.MODO.COM.AR/TERMINOS-Y-CONDICIONES-APP-MODO.\n\nVIGENCIA\nDESDE LAS 00:00  HORAS DEL DÍA 01 DE MAYO  DE 2026  HASTA LAS 23:59 HORAS DEL DÍA 31 DE MAYO DE 2026,AMBAS FECHAS INCLUSIVE O HASTA ALCANZAR LA SUMA DE $3.086.208.000 (PESOS TRES MIL OCHENTA Y SEIS MILLONES DOSCIENTOS OCHO MIL) EN CONCEPTO DE REINTEGROS OTORGADOS A LOS "
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": 3000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        0
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-sidecreer-amqc7d",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Sidecreer",
+      "textoOriginal": {
+        "titulo": "Sidecreer PLATINUM",
+        "terms": "SIDECREER PLATINUM\n\nPROMOCIÓN PRODUCTO SIDECREER PLATINUM - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 20% DE DESCUENTO (CON TOPE DE $3.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/01/2026 AL 30/06/2026, AMBAS FECHAS INCLUSIVE; EN PR"
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (20, 0,00%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 5,
+      "tope": 5000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-modo-1j95z0c",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Modo, BNA",
+      "textoOriginal": {
+        "titulo": "5% BNA MODO",
+        "terms": "BNA JUBILADOS 5%\n\nPROMOCIÓN VÁLIDA EN LA REPÚBLICA ARGENTINA TODOS LOS DÍAS LUNES, MARTES, MIÉRCOLES, JUEVES Y VIERNES DESDE EL 01/01/2026 HASTA EL 30/06/2026 PARA COMPRAS CON TARJETAS DE CRÉDITO VISA Y MASTERCARD Y TARJETAS DE DÉBITO MASTERCARD DÉBITO DEL BANCO NACIÓN PAGANDO EXCLUSIVAMENTE CON MODO BNA+ ESCANEANDO QR MODO EN COMERCIOS ADHERIDOS. TOPE DE DEVOLUCIÓN: HASTA $ 5.000 POR CLIENTE (SE CONSIDERA CLIENTE PARA EL BNA EL CUIT) POR CADA SEMANA (SE CONSIDERA SEMANA PARA EL BNA DE LUNES A DOMINGOS), DURANTE LA VIGENCIA DE LA PROMO, TOPE MÁXIMO DE DEVOLUCIÓN POR MES (SE CONSIDERA MES DEL P"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": 20000,
+      "dias": [
+        4
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-personal-pay-9qn9a9",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Personal Pay, Personal Pay",
+      "textoOriginal": {
+        "titulo": " Personal Pay",
+        "terms": "BENEFICIO DE ALCANCE NACIONAL, VÁLIDO LOS DÍAS JUEVES COMPRENDIDOS DESDE EL 01/10/2026 HASTA EL 30/11/2026. LA PROMOCIÓN CONSISTE EN UN 15% (QUINCE POR CIENTO) DE REINTEGRO PAGANDO CON TARJETA PREPAGA VISA DE PERSONAL PAY (FÍSICA O VIRTUAL), CÓDIGO QR, NFC Y/O CUALQUIER OTRO MEDIO DE PAGO HABILITADO POR PERSONAL PAY EN LA BILLETERA DIGITAL, SIN TOPE DE REINTEGRO, CON UN MÍNIMO DE COMPRA DE $20.000 (PESOS VEINTE MIL), MÁXIMO UNA TRANSACCIÓN POR JUEVES POR USUARIO. EL REINTEGRO SERÁ APLICADO EN LA BILLETERA DENTRO DE LAS 72HS DE REALIZADA LA OPERACIÓN. EXCLUSIVO EN TIENDAS FÍSICAS Y EL SITIO WEB"
+      },
+      "aVerificar": [
+        "medioPago",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 20000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-modo-aayz5h",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Modo, Modo",
+      "textoOriginal": {
+        "titulo": "20% - MODO",
+        "terms": "*ESTE BENEFICIO ES ACUMULABLE CON OTRAS PROMOCIONES QUE APLIQUEN PAGANDO CON MODO.\nTOPE DE REINTEGRO $20.000 POR BANCO, POR MES PARA COMPRAS MAYORES O IGUALES A $35.000. EL REINTEGRO SE ACREDITARÁ ÚNICAMENTE A AQUELLOS USUARIOS QUE SEAN TITULARES DE UNA CUENTA BANCARIA EN LA ENTIDAD EMISORA DE LA TARJETA CON LA QUE REALIZA EL PAGO. NO OLVIDES ASOCIARLA SI USAS LA APP MODO. VÁLIDO LOS DÍAS VIERNES Y SÁBADO DEL 01/11/2026 AL 31/12/2026. APLICA PARA BANCOS Y COMERCIOS ADHERIDOS. MODO CONTACTLESS (NFC) DISPONIBLE SÓLO EN DISPOSITIVOS ANDROID. PARA MÁS INFORMACIÓN Y CONDICIONES O LIMITACIONES APLIC"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": 20000,
+      "dias": [
+        3
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-mercado-pago-i9nopd",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Mercado Pago, Mercado Pago",
+      "textoOriginal": {
+        "titulo": "Mercado Pago 10%",
+        "terms": "ONLINE:\nCAMPAÑA NÚMERO 13963481. BENEFICIO VÁLIDO EN MERCADO PAGO DE ARGENTINA (I) DEL 02/11/2026 00:01 AL 30/11/2026 23:59, INCLUYENDO AMBAS FECHAS; O (II) MIENTRAS DURE EL STOCK DE CUPONES; O (III) HASTA ALCANZAR LA CANTIDAD DE $ 20000000 EN DESCUENTOS CONCEDIDOS A LOS USUARIOS, LO QUE SUCEDA PRIMERO, PARA PAGOS REALIZADOS A TRAVÉS DEL SERVICIO DE GESTIÓN DE PAGOS DE MERCADO PAGO, OPERADO POR MERCADOPAGO.COM REPRESENTACIONES LTDA. (“MERCADO PAGO”) EN LAS APPS DE MERCADO PAGO. EL BENEFICIO CONSISTE EN 10% EN PRODUCTOS O SERVICIOS SELECCIONADOS, EL LÍMITE DE DESCUENTO DEL BENEFICIO ES DE $ 199"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": 10000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        1,
+        5
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": "2026-10-01",
+      "vigenteHasta": "2027-03-31",
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-columbia-1js1u0o",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco Columbia, Banco Columbia",
+      "textoOriginal": {
+        "titulo": "Columbia 20% de reintegro",
+        "terms": "CARTERA DE CONSUMO.VIGENCIA DESDE EL 01/10/2026 HASTA EL 31/03/2027 AMBAS FECHAS INCLUSIVE. PARA COMPRAS REALIZADAS ÚNICAMENTE LOS DIAS LUNES Y VIERNES EN LAS SUCURSALES DE SUPERMERCADOS DIA UBICADAS EN EL TERRITORIO DE LA REPÚBLICA ARGENTINA CON LAS TARJETAS DE CREDITO VISA Y MASTERCARD EMITIDAS POR BANCO COLUMBIA. 20% DE AHORRO EN COMPRAS EN UN PAGO, TOPE DE REINTEGRO $10.000 (DIEZ MIL PESOS) POR TRANSACCION. EJEMPLO: COMPRA REALIZADA EN 1 PAGO DE $1000 RECIBIRÁ UN REINTEGRO DE $200. LA BONIFICACIONES SE VERÁN REFLEJADAS HASTA EN LOS 2 RESÚMENES SIGUIENTES AL QUE REFLEJE LA/S TRANSACCIÓN/ES."
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 10000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-del-sol-18nv11g",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco del Sol, Banco del Sol",
+      "textoOriginal": {
+        "titulo": "Banco del Sol",
+        "terms": "CARTERA DE CONSUMO. LA PRESENTE ACCIÓN PROMOCIONAL ES ORGANIZADA POR BANCO DEL SOL S.A., CUIT N° 30-67793756-0, CON DOMICILIO EN AV. LEANDRO N. ALEM 1058, PB, CIUDAD AUTÓNOMA DE BUENOS AIRES (EN ADELANTE, EL \"BANCO\" O \"BDS\", INDISTINTAMENTE). PROMOCIÓN VÁLIDA PARA CLIENTES DE BDS QUE SE ENCUENTREN REGISTRADOS EN LA APLICACIÓN DEL BANCO Y QUE REALICEN COMPRAS CON LA TARJETA DE DÉBITO VISA EMITIDA POR EL BANCO. VÁLIDA TODOS LOS MARTES, DESDE EL 01/10/2026 HASTA EL 30/11/2026, AMBAS FECHAS INCLUSIVE (EN ADELANTE, EL “PLAZO”). APLICABLE EXCLUSIVAMENTE EN TODAS LAS SUCURSALES DE SUPERMERCADO DIA DE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 0,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-visa-zoujvq",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Visa, Master Card, Cabal, American Express, Visa",
+      "textoOriginal": {
+        "titulo": "3CSI TC",
+        "terms": "CARTERA DE CONSUMO. PROMOCIÓN VÁLIDA PARA TODOS LOS DÍAS SÁBADO DEL 01/01/2026 AL 30/11/2026 EN TODAS LAS TIENDAS DIA Y WWW.DIAONLINE.COM.AR. PLAN 3 CUOTAS SIN INTERÉS CON LAS TARJETAS VISA, MASTERCARD, AMERICAN EXPRESS Y CABAL EMITIDAS EN LA REPÚBLICA ARGENTINA. EXCLUYE TARJETAS MASTERCARD CENCOSUD. VÁLIDO PARA COMPRAS CON TARJETA FÍSICA. DIA ARGENTINA S.A., DOMICILIO AV. RIVADAVIA 8875 1° PISO, CIUDAD AUTÓNOMA DE BUENOS AIRES, CUIT: 30-68584975-1.  TEM: 0,00% - TNA: 0,00% - TEA: 0,00% - CFTNA: 0,00%"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-naranja-12y3jh5",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Naranja, Naranja",
+      "textoOriginal": {
+        "titulo": "Naranja 20%",
+        "terms": "PROMOCIÓN VÁLIDA LOS MARTES DEL MES DE NOVIEMBRE DE 2026, O HASTA AGOTAR UN STOCK TOTAL DE 80.000 REINTEGROS, LO QUE OCURRA PRIMERO. EL BENEFICIO CONSISTE EN UN REINTEGRO (CASHBACK) PARA LAS COMPRAS REALIZADAS CON TARJETA DE CRÉDITO NARANJAX Y TARJETA DE DÉBITO VISA NARANJAX EN TODOS LOS COMERCIOS ADHERIDOS A LA ¨PROMO SUPERMERCADO NX”; APLICANDO EL SIGUIENTE DESCUENTO Y TOPE SEGÚN EL PLAN DEL USUARIO: (1) PLAN INICIAL: 20% DE DESCUENTO CON TOPE DE $3.000 POR SEMANA. (2) PLAN TURBO: 25% DE DESCUENTO CON TOPE DE $9.500 POR SEMANA. (3) PLAN ÉPICO: 30% DE DESCUENTO CON TOPE DE $12.000 POR SEMANA."
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "tope",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (20, 25, 30%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-naranja-pnc80u",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Naranja, Naranja",
+      "textoOriginal": {
+        "titulo": "Naranja 25%",
+        "terms": "PROMOCIÓN VÁLIDA LOS MARTES DEL MES DE NOVIEMBRE DE 2026, O HASTA AGOTAR UN STOCK TOTAL DE 80.000 REINTEGROS, LO QUE OCURRA PRIMERO. EL BENEFICIO CONSISTE EN UN REINTEGRO (CASHBACK) PARA LAS COMPRAS REALIZADAS CON TARJETA DE CRÉDITO NARANJAX Y TARJETA DE DÉBITO VISA NARANJAX EN TODOS LOS COMERCIOS ADHERIDOS A LA ¨PROMO SUPERMERCADO NX”; APLICANDO EL SIGUIENTE DESCUENTO Y TOPE SEGÚN EL PLAN DEL USUARIO: (1) PLAN INICIAL: 20% DE DESCUENTO CON TOPE DE $3.000 POR SEMANA. (2) PLAN TURBO: 25% DE DESCUENTO CON TOPE DE $9.500 POR SEMANA. (3) PLAN ÉPICO: 30% DE DESCUENTO CON TOPE DE $12.000 POR SEMANA."
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "tope",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (20, 25, 30%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-naranja-7zza9m",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Naranja, Naranja",
+      "textoOriginal": {
+        "titulo": "Naranja 30%",
+        "terms": "PROMOCIÓN VÁLIDA LOS MARTES DEL MES DE NOVIEMBRE DE 2026, O HASTA AGOTAR UN STOCK TOTAL DE 80.000 REINTEGROS, LO QUE OCURRA PRIMERO. EL BENEFICIO CONSISTE EN UN REINTEGRO (CASHBACK) PARA LAS COMPRAS REALIZADAS CON TARJETA DE CRÉDITO NARANJAX Y TARJETA DE DÉBITO VISA NARANJAX EN TODOS LOS COMERCIOS ADHERIDOS A LA ¨PROMO SUPERMERCADO NX”; APLICANDO EL SIGUIENTE DESCUENTO Y TOPE SEGÚN EL PLAN DEL USUARIO: (1) PLAN INICIAL: 20% DE DESCUENTO CON TOPE DE $3.000 POR SEMANA. (2) PLAN TURBO: 25% DE DESCUENTO CON TOPE DE $9.500 POR SEMANA. (3) PLAN ÉPICO: 30% DE DESCUENTO CON TOPE DE $12.000 POR SEMANA."
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "tope",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (20, 25, 30%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 0,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-mercado-pago-wf3idq",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Mercado Pago, Mercado Pago",
+      "textoOriginal": {
+        "titulo": "Mercado Pago 3 CSI",
+        "terms": "*VÁLIDO EN COMPRAS DESDE $50.000 HASTA 2 CUOTAS SIN INTERÉS, Y $150.000 HASTA 3 CUOTAS SIN INTERÉS PAGANDO CON QR DE MERCADO PAGO.\nCFTNA: 0%. TASA FIJA NOMINAL Y EFECTIVA ANUAL 0%. PARA MÁS INFORMACIÓN SOBRE CONDICIONES O LIMITACIONES APLICABLES, CONSULTÁ EN HTTPS://WWW.MERCADOPAGO.COM.AR/TARJETA-DE-CREDITO.\n"
+      },
+      "aVerificar": [
+        "medioPago",
+        "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": 7500,
+      "topePeriodo": "mes",
+      "minimo": 35000,
+      "dias": [
+        5,
+        6
+      ],
+      "canal": "ambos",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-bna-170s3qw",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "BNA",
+      "textoOriginal": {
+        "titulo": "BNA + MODO",
+        "terms": "PROMOCIÓN VÁLIDA EN LA REPÚBLICA ARGENTINA TODOS LOS DÍAS VIERNES Y SÁBADOS DESDE EL 01/10/2026 AL 31/12/2026, AMBAS FECHAS INCLUSIVE, PARA COMPRAS CON TARJETAS DE CRÉDITO MASTERCARD DEL BANCO NACIÓN PAGANDO EXCLUSIVAMENTE CON BNA+ MODO ESCANEANDO QR MODO EN COMERCIOS ADHERIDOS DE LOS SUPERMERCADOS DÍA. TOPE DE DEVOLUCIÓN: HASTA $ 7.500 POR CLIENTE (SE CONSIDERA CLIENTE PARA EL BNA EL CUIT) POR MES (SE CONSIDERA MES PARA EL BNA DEL PRIMERO AL ÚLTIMO DÍA DE CADA MES CALENDARIO) DURANTE LA VIGENCIA DE LA PROMOCIÓN. MÍNIMO DE COMPRA: $ 35.000. EL DESCUENTO SE VERÁ REFLEJADO EN EN LA CUENTA MONETA"
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-cuenta-dni-1q904wp",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Cuenta DNI",
+      "textoOriginal": {
+        "titulo": "Cuenta Dni  Visa",
+        "terms": "PROMOCIÓN VÁLIDA TODOS LOS LUNES COMPRENDIDOS ENTRE EL 1 DE OCTUBRE Y EL 31 DE DICIEMBRE DE 2026, AMBAS FECHAS INCLUSIVE. 20% DE REINTEGRO, SIN TOPE, PARA LAS COMPRAS REALIZADAS DE MANERA PRESENCIAL A TRAVÉS DE CUENTA DNI CON TECNOLOGÍA SIN CONTACTO (NFC) UTILIZANDO TARJETAS VISA, EN LOCALES ADHERIDOS DE “SUPERMERCADOS DÍA%”. LA MODALIDAD DE PAGO MEDIANTE TECNOLOGÍA SIN CONTACTO (NFC) SERÁ VÁLIDA\nÚNICAMENTE PARA TARJETAS VISA CRÉDITO HABILITADAS EN CUENTA DNI Y DISPONIBLES EN DISPOSITIVOS CON SISTEMA OPERATIVO ANDROID. LOS LOCALES ADHERIDOS PARTICIPANTES PODRÁN CONSULTARSE EN WWW.BANCOPROVINCI"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 10,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-cuenta-dni-11ltbvy",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Cuenta DNI",
+      "textoOriginal": {
+        "titulo": "Cuenta DNI 10%",
+        "terms": "PROMOCIÓN VÁLIDA LOS LUNES DE NOVIEMBRE DEL 2026 PARA COMPRAS REALIZADAS A TRAVÉS DE LA FUNCIONALIDAD \"PAGO CLAVE DNI\" DE LA APLICACIÓN CUENTA DNI EN LOS COMERCIOS ADHERIDOS BAJO EL NOMBRE DE “DIA” ADHERIDOS. LA NÓMINA DE ADHERIDOS SE PODRÁ CONSULTAR EN WWW.BANCOPROVINCIA.COM.AR. BONIFICACIÓN DEL 10%. SIN TOPE DE REINTEGRO. SE DARÁ UN REINTEGRO QUE SE VERÁ REFLEJADO EN LOS MOVIMIENTOS DE LA CUENTA VINCULADA A CUENTA DNI AL MOMENTO DEL CONSUMO, DENTRO DE LOS 10 DÍAS HÁBILES SIGUIENTES DE REALIZADA LA COMPRA. EL BENEFICIO NO APLICA A CLIENTES QUE REGISTRAN ATRASO EN EL PAGO DE SUS OBLIGACIONES C"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 5,
+      "tope": 5000,
+      "topePeriodo": "semana",
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-cuenta-dni-eunits",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Cuenta DNI",
+      "textoOriginal": {
+        "titulo": "Cuenta DNI 5%",
+        "terms": "(*) PROMOCIÓN VÁLIDA LOS LUNES DE NOVIEMBRE DEL 2026 EN LOCALES “DÍA%” ADHERIDOS. BENEFICIO EXCLUSIVO PARA JUBILADOS QUE HAYAN PERCIBIDO SU HABER ENTRE EL 1° Y EL 31 DE OCTUBRE DEL 2026 EN BANCO PROVINCIA. SE OTORGARÁ UN 5% DE REINTEGRO ADICIONAL SOBRE EL VALOR DEL TICKET, CON UN TOPE DE REINTEGRO UNIFICADO DE $5.000 POR PERSONA Y POR SEMANA. “UNIFICADO” SIGNIFICA QUE EL TOPE APLICARÁ CONSIDERANDO EL TOTAL DE COMPRAS REALIZADAS POR CUENTA EN TODOS LOS LOCALES PARTICIPANTES. EL REINTEGRO SE ACREDITARÁ EN LA CUENTA VINCULADA A CUENTA DNI DENTRO DE LOS 10 DÍAS HÁBILES POSTERIORES A LA COMPRA. VÁL"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": 5000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        0
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-sidecreer-sizz4e",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Sidecreer",
+      "textoOriginal": {
+        "titulo": "Sidecreer BLACK",
+        "terms": "PROMOCIÓN PRODUCTO SIDECREER BLACK - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 25% DE DESCUENTO (CON TOPE DE $5.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/07/2026 AL 30/11/2026, AMBAS FECHAS INCLUSIVE; EN PROVINCIA DE ENTRE RÍOS, "
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (25, 0,00%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": 2000,
+      "topePeriodo": "transaccion",
+      "minimo": null,
+      "dias": [
+        0
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-sidecreer-16ea56n",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Sidecreer",
+      "textoOriginal": {
+        "titulo": "Sidecreer 10% VERDE",
+        "terms": "SIDECREER VERDE\n\nPROMOCIÓN PRODUCTOS SIDECREER VERDE Y SIDECREER COMÚN/CLÁSICA - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 10% DE DESCUENTO (CON TOPE DE $2.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/07/2026 AL 30/11/2026, AMBAS FE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (10, 0,00%): elegir el que corresponde."
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1,
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-tarjeta-ba-z6qhbr",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Tarjeta BA",
+      "textoOriginal": {
+        "titulo": "Ciudadania Portena",
+        "terms": "PROMOCIÓN VIGENTE DESDE EL 01/01/2026 AL 30/11/2026 INCLUSIVE EN LOS SUPERMERCADOS DIA DE LA CIUDAD AUTONÓMA DE BUENOS AIRES PARA COMPRAS REALIZADAS LOS DÍAS LUNES Y JUEVES. VÁLIDA PARA TARJETA PRECARGADA SOCIAL PERTENECIENTE AL PROGRAMA CIUDADANÍA PORTEÑA DEL GOBIERNO DE LA CIUDAD DE BUENOS AIRES. SE OTORGARÁ 15% DE REINTEGRO POR EL TOTAL DE LA COMPRA SIN TOPE DE REINTEGRO. EL REINTEGRO SE REALIZARÁ EN LA TARJETA DENTRO DE LOS SIGUIENTES 10 DÍAS HÁBILES. SERÁ CONDICIÓN ESENCIAL, AL MOMENTO DE EFECTUAR EL REINTEGRO, QUE LA TARJETA SE ENCUENTRE VIGENTE Y EN ESTADO DE CUMPLIMIENTO NORMAL. LA PRE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": null,
+      "valor": null,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        3,
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-corrientes-4p1cpk",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco Corrientes",
+      "textoOriginal": {
+        "titulo": "Banco Corrientes",
+        "terms": "PROMOCIÓN VIGENTE DESDE EL 01/01/2026 AL 31/12/2026 PARA COMPRAS CON TARJETAS DE CREDITO VISA Y MASTERCARD Y VISA DEBITO DEL BANCO DE CORRIENTES, LOS DIAS MIERCOLES Y JUEVES, SE BONIFICARÁ EL 5% (CINCO PORCIENTO) (VER COMERCIOS) SOBRE EL MONTO TOTAL DE LA COMPRA, EN HASTA 3 CUOTAS SIN INTERES SIN TOPE DE REINTEGRO. ADICIONALMENTE ABONANDO EXCLUSIVAMENTE DESDE MAS BANCO EN COMERCIOS ADHERIDOS, SE BONIFICARÁ EL 30% CON TOPE DE REINTEGRO DE $20.000 POR MES Y POR CUENTA. PARA QUE LA BONIFICACIÓN IMPACTE CORRECTAMENTE, EL CLIENTE DEBE TENER ELEGIDA UNA CUENTA FAVORITA DEL BANCO DE CORRIENTES QUE PE"
+      },
+      "aVerificar": [
+        "medioPago",
+        "valor",
+        "tipo",
+        "minimo",
+        "vigencia"
+      ],
+      "notas": "El texto legal menciona varios porcentajes (5, 30, 0, 0,00%): elegir el que corresponde."
+    }
+  ]
+}

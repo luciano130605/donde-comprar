@@ -1,0 +1,6 @@
+node_modules
+dist
+.astro
+sepa-ejemplo
+sepa-datos
+.cache
