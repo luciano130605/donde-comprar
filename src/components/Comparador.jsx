@@ -349,7 +349,6 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
   const diaSel = pagos.dia === 'hoy' ? hoy.getDay() : Number(pagos.dia);
   const hoyPorTienda = useMemo(() => tiendas.map((t) => ({ t, reglas: disponiblesHoy(REGLAS, t.id, { dia: diaSel, canal: pagos.canal, hoy }) })), [tiendas, diaSel, pagos.canal, hoy]);
   const conPromo = hoyPorTienda.filter((x) => x.reglas.length);
-  const maxDescuento = useMemo(() => new Map(conPromo.map(({ t, reglas }) => [t.id, Math.max(...reglas.map((r) => (r.tipo === 'porcentaje' ? r.valor : 0)))])), [conPromo]);
   const leidoEl = generadas.generadoEl ? new Date(generadas.generadoEl).toLocaleDateString('es-AR', { day: 'numeric', month: 'long' }) : '';
   const cuandoDescuento = pagos.dia === 'hoy' ? 'hoy' : `los ${NOMBRES_DIA[Number(pagos.dia)]}`;
 
@@ -372,40 +371,77 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
   }, [agrupar, baseRes, conteoRubros]);
 
   const tarjeta = 'rounded-3xl border border-borde bg-hoja';
-  const sello = (id) => (maxDescuento.get(id) ? <span className="ml-1.5 whitespace-nowrap rounded-md bg-suave px-1.5 py-0.5 text-[0.7rem] font-bold text-suave-texto">hasta {maxDescuento.get(id)}% {pagos.dia === 'hoy' ? 'hoy' : DIAS_CORTO[Number(pagos.dia)]}</span> : null);
+  // Descuento de hoy para UN producto en un súper: el mayor porcentaje que se puede usar con ese precio
+  // (respeta el mínimo de compra y el tope). "pendiente" = una promo mejor que pide una compra mayor.
+  const reglasDe = new Map(hoyPorTienda.map((x) => [x.t.id, x.reglas.filter((r) => r.tipo === 'porcentaje' && r.valor > 0)]));
+  const descuentoPara = (idTienda, v) => {
+    const reglas = reglasDe.get(idTienda) || [];
+    let mejor = null, pendiente = null, usables = 0;
+    for (const r of reglas) {
+      if (r.minimo != null && v < r.minimo) { if (!pendiente || r.valor > pendiente.valor) pendiente = r; continue; }
+      usables++;
+      let ahorro = (v * r.valor) / 100;
+      if (r.tope != null) ahorro = Math.min(ahorro, r.tope);
+      if (!mejor || ahorro > mejor.ahorro) mejor = { regla: r, ahorro, final: v - ahorro };
+    }
+    if (mejor) mejor.otras = usables - 1;
+    if (pendiente && mejor && pendiente.valor <= mejor.regla.valor) pendiente = null;
+    return { mejor, pendiente };
+  };
+  const condiciones = (r) => [r.minimo != null ? `mín. ${peso(r.minimo)}` : null, r.tope != null ? `tope ${peso(r.tope)}` : null].filter(Boolean).join(' · ');
+
   const filaProducto = (p) => {
-    const ps = precios(p, tiendas);
-    const dif = ps.length > 1 ? ps[ps.length - 1].v - ps[0].v : 0;
+    // Precios con el mejor descuento de hoy aplicado; se ordena por el precio final.
+    const ps = precios(p, tiendas)
+      .map((x) => { const d = descuentoPara(x.t.id, x.v); return { ...x, ...d, fin: d.mejor ? d.mejor.final : x.v }; })
+      .sort((a, b) => a.fin - b.fin);
+    const top = ps[0];
+    const dif = ps.length > 1 ? ps[ps.length - 1].fin - top.fin : 0;
     return (
       <li key={p.ean} className="py-3.5">
         <div className="flex items-start gap-3">
-          {ps[0] ? <Avatar tienda={ps[0].t} /> : <span className="h-10 w-10 shrink-0 rounded-full bg-panel" />}
+          {top ? <Avatar tienda={top.t} /> : <span className="h-10 w-10 shrink-0 rounded-full bg-panel" />}
           <div className="min-w-0 flex-1">
             <p className="font-semibold leading-snug">{p.n}</p>
             <p className="mt-0.5 text-sm text-apagado">{[p.m, p.u].filter(Boolean).join(' · ') || ' '}</p>
+            {top && top.mejor && (
+              <p className="mt-1.5 text-xs leading-snug">
+                <span className="rounded-md bg-sello px-1.5 py-0.5 font-bold text-sello-texto">−{top.mejor.regla.valor}% en {top.t.nombre}</span>{' '}
+                <span className="text-apagado">{limpiarMedio(top.mejor.regla)}{condiciones(top.mejor.regla) ? ` · ${condiciones(top.mejor.regla)}` : ''}{top.mejor.otras > 0 ? ` · +${top.mejor.otras} más` : ''}</span>
+              </p>
+            )}
           </div>
-          {ps[0] ? (
+          {top ? (
             <div className="shrink-0 text-right">
-              <p className="text-lg font-bold leading-tight tabular-nums">{peso(ps[0].v)}</p>
-              <p className="text-xs text-apagado">en {ps[0].t.nombre}</p>
+              <p className="text-lg font-bold leading-tight tabular-nums">{peso(top.fin)}</p>
+              {top.mejor ? (
+                <>
+                  <p className="text-xs font-semibold text-apagado">con descuento</p>
+                  <p className="text-xs text-apagado tabular-nums"><s>{peso(top.v)}</s> normal</p>
+                </>
+              ) : <p className="text-xs text-apagado">en {top.t.nombre}</p>}
             </div>
           ) : <p className="shrink-0 text-sm text-apagado">Sin precio</p>}
         </div>
-        {ps.length > 0 && (
+        {top && (
           <details className="mt-2 pl-[3.25rem] text-sm">
             <summary className="inline-flex cursor-pointer list-none flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold text-apagado hover:text-texto">
               <span className="rounded-full bg-panel px-2.5 py-1">{ps.length > 1 ? `Comparar ${ps.length} súpers` : 'Ver detalle'}</span>
               {dif > 0 && <span>hasta {peso(dif)} más en {ps[ps.length - 1].t.nombre}</span>}
-              {maxDescuento.get(ps[0].t.id) ? <span className="rounded-md bg-suave px-1.5 py-0.5 font-bold text-suave-texto">{ps[0].t.nombre}: hasta {maxDescuento.get(ps[0].t.id)}% {pagos.dia === 'hoy' ? 'hoy' : DIAS_CORTO[Number(pagos.dia)]}</span> : null}
             </summary>
             <ul className="mt-2 max-w-md divide-y divide-borde">
               {ps.map((x, i) => (
-                <li key={x.t.id} className="flex items-baseline justify-between gap-3 py-2">
-                  <span className={i === 0 ? 'font-bold' : ''}>{x.t.nombre}{sello(x.t.id)}</span>
-                  <span className="shrink-0 tabular-nums">
-                    <span className={i === 0 ? 'rounded-md bg-sello px-1.5 py-0.5 font-bold text-sello-texto' : ''}>{peso(x.v)}</span>
-                    {i > 0 && <span className="ml-2 text-xs text-apagado">+{peso(x.v - ps[0].v)} ({Math.round(((x.v - ps[0].v) / ps[0].v) * 100)}%)</span>}
-                  </span>
+                <li key={x.t.id} className="py-2">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span className={i === 0 ? 'font-bold' : ''}>{x.t.nombre}</span>
+                    <span className="shrink-0 tabular-nums">
+                      <span className={i === 0 ? 'rounded-md bg-sello px-1.5 py-0.5 font-bold text-sello-texto' : 'font-semibold'}>{peso(x.fin)}</span>
+                      {x.mejor && <s className="ml-2 text-xs text-apagado">{peso(x.v)}</s>}
+                      {i > 0 && <span className="ml-2 text-xs text-apagado">+{peso(x.fin - top.fin)} ({Math.round(((x.fin - top.fin) / top.fin) * 100)}%)</span>}
+                    </span>
+                  </div>
+                  {x.mejor && <p className="mt-0.5 text-xs text-apagado">Normal {peso(x.v)} · −{x.mejor.regla.valor}% ({peso(x.mejor.ahorro)}) con {limpiarMedio(x.mejor.regla)}{condiciones(x.mejor.regla) ? ` · ${condiciones(x.mejor.regla)}` : ''}</p>}
+                  {x.pendiente && <p className="mt-0.5 text-xs text-apagado">{x.pendiente.valor}% con {limpiarMedio(x.pendiente)} si la compra llega a {peso(x.pendiente.minimo)}</p>}
                 </li>
               ))}
               {tiendas.filter((t) => p.p[t.id] == null).length > 0 && (
@@ -563,6 +599,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
       <footer className="mt-8 px-1 text-xs text-apagado">
         {fuente === 'sepa' && `Precios de lista de Precios Claros (SEPA) en ${zona}. Son la mediana de las sucursales de la zona.`}
         {fuente === 'online' && 'Precios publicados en las tiendas online. Pueden diferir de los de góndola e incluir descuentos de la web.'}
+        <span className="mt-1 block">El precio «con descuento» es una estimación para ese producto solo, con el mayor descuento del día elegido en Descuentos (cualquier medio de pago, respetando mínimo y tope). Confirmá condiciones y exclusiones en el súper.</span>
       </footer>
 
       <div className="caja pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4">
