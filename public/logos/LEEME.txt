@@ -1,0 +1,8 @@
+Poné acá los logos de los supermercados, uno por archivo, con el id de la tienda como nombre:
+
+  coto.png   dia.png   jumbo.png   carrefour.png   disco.png   vea.png   changomas.png
+  cordiez.png   josimar.png   laanonima.png   coopobrera.png   toledo.png   unicoop.png   marianomax.png
+
+Formatos aceptados: png, svg, webp, jpg. Mejor cuadrados (o con fondo transparente), de 128x128 o más.
+Se muestran dentro de un círculo blanco. Si falta un logo, la web usa las iniciales del súper.
+No hace falta tocar código: guardá el archivo y recargá la página.

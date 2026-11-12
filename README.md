@@ -3,6 +3,14 @@
 Compara el precio de una lista de compras entre Coto, Día, Jumbo, Carrefour y Disco.
 Astro + React + Tailwind. Sin IA ni servicios externos: los precios salen de la base abierta **Precios Claros (SEPA)** del gobierno.
 
+## Qué hace la app
+
+Es solo para **comparar precios y ver descuentos** (no hay carrito ni lista de compras): buscás un producto, ves en qué súper está más barato y cuánto más caro sale en los demás, filtrás por rubro, marca, precio o súper, y en «Descuentos» ves los de cada día. Los íconos son de [Hugeicons](https://hugeicons.com) (`@hugeicons/react` + `@hugeicons/core-free-icons`).
+
+### Logos de los supermercados
+
+Copiá los logos a `public/logos/` con el id del súper como nombre (`coto.png`, `dia.png`, `jumbo.svg`, `carrefour.webp`, …; ver `public/logos/LEEME.txt`). Se leen al compilar (`npm run dev` o `npm run build`): no hay que tocar código. Si falta alguno, se muestran las iniciales del súper.
+
 ## Probar ya mismo (datos de ejemplo, precios inventados)
 
 ```bash
@@ -60,7 +68,7 @@ npm run datos:online
 
 ## Promos de bancos, billeteras y tarjetas
 
-La web **no te pide cómo pagás**: el panel «Descuentos de hoy» lista, súper por súper, los descuentos que valen para el día y el canal (online o presencial) elegidos, con su **porcentaje, medio de pago, mínimo de compra y tope**. Si tenés un changuito armado, cada súper muestra cuánto ahorrarías con su mejor descuento de hoy (con cualquier medio de pago) y cuánto te falta para llegar al mínimo de una promo mejor.
+La web **no te pide cómo pagás**: el panel «Descuentos de hoy» lista, súper por súper, los descuentos que valen para el día y el canal (online o presencial) elegidos, con su **porcentaje, medio de pago, mínimo de compra y tope**. En la lista de precios, cada producto indica además si su súper más barato tiene un descuento hoy.
 
 Se muestran las promos de `config/promos.json` (sin las marcadas como ejemplo) más las leídas automáticamente de Coto y Día (`config/promos.generated.json`), que figuran como «leídas de la web, sin verificar». Las promos de ejemplo del `promos.json` no se usan en pantalla.
 
@@ -99,7 +107,7 @@ Las promos **no se suman** salvo que las dos tengan `acumulable: true`; en ese c
 
 Las promos aprobadas a mano (`promos.json`) muestran una etiqueta cuando están **vencidas**, **aún no vigentes**, **sin verificar** o verificadas **hace más de 30 días**. Las vencidas no se muestran como disponibles hoy.
 
-Si el total no llega al mínimo de una promo mejor, la caja muestra «faltan $X p/ promo» y el panel de cada súper dice cuánto sumar. Los porcentajes, mínimos y topes leídos de la web pueden tener condiciones y exclusiones: confirmalos en el súper antes de pagar.
+Los porcentajes, mínimos y topes leídos de la web pueden tener condiciones y exclusiones: confirmalos en el súper antes de pagar.
 
 ### Leer promos automáticamente (Coto y Día)
 

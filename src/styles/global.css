@@ -1,56 +1,80 @@
 @import "tailwindcss";
 
-/* Matriz de comparación. Ciruela + naranja mandarina.
-   Una sola familia (Archivo) usando su eje de ancho: condensada para títulos, normal para datos. */
+/* Estilo "app": fondo gris muy claro, tarjetas blancas bien redondeadas, ciruela y acento naranja. */
 @theme inline {
-  --font-display: "Archivo", "Segoe UI", system-ui, sans-serif;
-  --font-sans: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Geist", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Geist", "Segoe UI", system-ui, sans-serif;
   --color-fondo: var(--fondo);
+  --color-hoja: var(--hoja);
   --color-panel: var(--panel);
   --color-texto: var(--texto);
   --color-apagado: var(--apagado);
   --color-borde: var(--borde);
+  --color-primario: var(--primario);
+  --color-primario-texto: var(--primario-texto);
   --color-sello: var(--sello);
   --color-sello-texto: var(--sello-texto);
+  --color-suave: var(--suave);
+  --color-suave-texto: var(--suave-texto);
   --color-alerta: var(--alerta);
 }
 
 :root {
   color-scheme: light;
-  --fondo: oklch(0.975 0.012 80);
-  --panel: oklch(0.94 0.025 335);
-  --texto: oklch(0.26 0.075 335);
-  --apagado: oklch(0.46 0.055 335);
-  --borde: oklch(0.86 0.03 335);
-  --sello: oklch(0.78 0.165 55);
-  --sello-texto: oklch(0.2 0.06 335);
-  --alerta: oklch(0.5 0.19 28);
+  --fondo: #f8f5f3;
+  --hoja: #ffffff;
+  --panel: #f3ecf1;
+  --texto: #2e1630;
+  --apagado: #725d72;
+  --borde: #eadfe7;
+  --primario: #3d1640;
+  --primario-texto: #ffb463;
+  --sello: #ff9f45;
+  --sello-texto: #2e1630;
+  --suave: #ffe2c4;
+  --suave-texto: #3d1640;
+  --alerta: #b3261e;
   --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Tema oscuro: se activa con data-theme="dark", o con el del sistema si no hay elección guardada. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --fondo: oklch(0.2 0.05 335);
-  --panel: oklch(0.265 0.06 335);
-  --texto: oklch(0.96 0.012 80);
-  --apagado: oklch(0.78 0.045 335);
-  --borde: oklch(0.38 0.06 335);
-  --alerta: oklch(0.76 0.15 30);
+  --fondo: #1c0f1d;
+  --hoja: #281829;
+  --panel: #352236;
+  --texto: #f6eef2;
+  --apagado: #c3adc1;
+  --borde: #442d45;
+  --primario: #ff9f45;
+  --primario-texto: #2e1630;
+  --suave: #4a2a2c;
+  --suave-texto: #ffc68a;
+  --alerta: #ff8a80;
 }
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     color-scheme: dark;
-    --fondo: oklch(0.2 0.05 335);
-    --panel: oklch(0.265 0.06 335);
-    --texto: oklch(0.96 0.012 80);
-    --apagado: oklch(0.78 0.045 335);
-    --borde: oklch(0.38 0.06 335);
-    --alerta: oklch(0.76 0.15 30);
+    --fondo: #1c0f1d;
+    --hoja: #281829;
+    --panel: #352236;
+    --texto: #f6eef2;
+    --apagado: #c3adc1;
+    --borde: #442d45;
+    --primario: #ff9f45;
+    --primario-texto: #2e1630;
+    --suave: #4a2a2c;
+    --suave-texto: #ffc68a;
+    --alerta: #ff8a80;
   }
 }
 
-html { background: var(--fondo); scroll-behavior: smooth; }
+html {
+  background: var(--fondo);
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--fondo);
   color: var(--texto);
@@ -59,20 +83,77 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible { outline: 3px solid var(--sello); outline-offset: 2px; box-shadow: 0 0 0 5px var(--sello-texto); border-radius: 4px; }
-::selection { background: var(--sello); color: var(--sello-texto); }
-input { caret-color: var(--texto); }
-* { scrollbar-color: var(--borde) transparent; }
-summary::-webkit-details-marker { display: none; }
+:focus-visible {
+  outline: 2px solid var(--texto);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
 
-.titulo { font-family: var(--font-display); font-stretch: 62%; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+::selection {
+  background: var(--sello);
+  color: var(--sello-texto);
+}
 
-/* Único momento de movimiento: la caja sube desde abajo la primera vez que hay algo en la lista. */
-@keyframes subir { from { transform: translateY(110%); } to { transform: none; } }
-.caja { animation: subir 550ms var(--ease-salida) both; }
-@media (prefers-reduced-motion: reduce) { .caja { animation: none; } html { scroll-behavior: auto; } }
+input {
+  caret-color: var(--texto);
+}
+
+* {
+  scrollbar-color: var(--borde) transparent;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.sin-barra {
+  scrollbar-width: none;
+}
+
+.sin-barra::-webkit-scrollbar {
+  display: none;
+}
+
+.titulo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Único momento de movimiento: la barra flotante sube al cargar. */
+@keyframes subir {
+  from {
+    transform: translateY(140%);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+.caja {
+  animation: subir 550ms var(--ease-salida) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caja {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 input {
   font-size: 16px !important;
 }
-input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+button {
+  cursor: pointer;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}

@@ -1,6 +1,18 @@
 ---
 import '../styles/global.css';
 import Comparador from '../components/Comparador.jsx';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Logos de los supermercados: cualquier archivo public/logos/<id>.(png|svg|webp|jpg) se usa solo.
+const logos = {};
+const dirLogos = path.join(process.cwd(), 'public', 'logos');
+if (fs.existsSync(dirLogos)) {
+  for (const f of fs.readdirSync(dirLogos)) {
+    const m = f.match(/^(.+)\.(png|svg|webp|jpe?g)$/i);
+    if (m) logos[m[1].toLowerCase()] = f;
+  }
+}
 ---
 <!doctype html>
 <html lang="es">
@@ -15,7 +27,7 @@ import Comparador from '../components/Comparador.jsx';
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0d6b4d">
+    <meta name="theme-color" content="#3d1640">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Comparador de Súper">
@@ -29,9 +41,9 @@ import Comparador from '../components/Comparador.jsx';
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..800&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <Comparador client:load />
+    <Comparador client:load logos={logos} />
   </body>
 </html>
