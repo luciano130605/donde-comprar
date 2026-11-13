@@ -471,10 +471,6 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
             <input type="search" value={consulta} onChange={(e) => { setConsulta(e.target.value); if (vista !== 'productos') setVista('productos'); }} placeholder="Buscá un producto"
               className="h-11 w-full rounded-2xl bg-panel pl-11 pr-4 font-semibold placeholder:font-semibold placeholder:text-apagado" />
           </label>
-          <button type="button" onClick={() => { setEscaneando(true); if (vista !== 'productos') setVista('productos'); }} aria-label="Escanear código de barras"
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-panel">
-            <Icono n="codigo" className="h-5 w-5" />
-          </button>
           <button type="button" onClick={() => { setFiltrosAbiertos((v) => !v); if (vista !== 'productos') setVista('productos'); }} aria-expanded={filtrosAbiertos} aria-label={hayFiltros ? 'Filtros (activos)' : 'Filtros'}
             className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sello text-sello-texto">
             <Icono n="filtros" className="h-5 w-5" />
@@ -614,12 +610,20 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
 
       <div className="caja pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4">
         <nav aria-label="Secciones" className="pointer-events-auto flex gap-1 rounded-full border border-borde bg-hoja/35 p-1.5 shadow-xl shadow-black/15 backdrop-blur-md">
-          {[['productos', 'Precios', 'buscar'], ['descuentos', 'Descuentos', 'descuento']].map(([id, nombre, ic]) => (
-            <button key={id} type="button" aria-current={vista === id ? 'page' : undefined} onClick={() => irA(id)}
-              className={'flex h-12 min-w-[6.5rem] flex-col items-center justify-center rounded-full px-5 text-[0.65rem] font-bold uppercase tracking-wide transition-colors ' + (vista === id ? 'bg-sello text-sello-texto' : 'text-apagado hover:text-texto')}>
-              <Icono n={ic} className="h-5 w-5" />
-              {nombre}
+          {[['productos', 'Precios', 'buscar'], null, ['descuentos', 'Descuentos', 'descuento']].map((it) => it ? (
+            <button key={it[0]} type="button" aria-current={vista === it[0] ? 'page' : undefined} onClick={() => irA(it[0])}
+              className={'flex h-12 min-w-[5.5rem] flex-col items-center justify-center rounded-full px-4 text-[0.65rem] font-bold uppercase tracking-wide transition-colors ' + (vista === it[0] ? 'bg-sello text-sello-texto' : 'text-apagado hover:text-texto')}>
+              <Icono n={it[2]} className="h-5 w-5" />
+              {it[1]}
             </button>
+          ) : (
+            <div key="escanear" className="relative w-20 shrink-0">
+              <button type="button" onClick={() => { setEscaneando(true); if (vista !== 'productos') setVista('productos'); }} aria-label="Escanear código de barras"
+                className="absolute left-1/2 -top-8 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 flex-col items-center justify-center rounded-full border-4 border-fondo bg-primario text-primario-texto shadow-lg shadow-black/30 transition-transform active:scale-95">
+                <Icono n="codigo" className="h-7 w-7" />
+                <span className="text-[0.6rem] font-bold uppercase tracking-wide">Escanear</span>
+              </button>
+            </div>
           ))}
         </nav>
       </div>
