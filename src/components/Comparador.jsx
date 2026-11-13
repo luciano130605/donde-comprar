@@ -220,29 +220,36 @@ function BotonTema() {
 }
 
 function Alternativas({ p, productos, tiendas, onVer }) {
-  const [lista, setLista] = useState(null);
-  if (lista === null) {
+  const [res, setRes] = useState(null);
+  if (res === null) {
     return (
-      <button type="button" onClick={() => setLista(alternativasMasBaratas(p, productos, (x) => menorPrecio(x, tiendas)))}
+      <button type="button" onClick={() => setRes(alternativasMasBaratas(p, productos, (x) => menorPrecio(x, tiendas)))}
         className="rounded-full border border-borde bg-hoja px-3 py-1.5 text-xs font-bold hover:border-apagado">Alternativas más baratas</button>
     );
   }
-  if (!lista.length) return <p className="text-xs text-apagado">No encontramos alternativas más baratas de tamaño parecido.</p>;
+  const { lista, parecidos } = res;
+  if (!lista.length) {
+    return <p className="text-xs text-apagado">{parecidos > 0 ? 'Este producto ya está entre los más baratos de su tipo y tamaño.' : 'No encontramos productos parecidos para comparar.'}</p>;
+  }
+  const porUnidad = lista.some((a) => a.porUnidad);
   const base = menorPrecio(p, tiendas);
   return (
-    <div className="w-full">
-      <p className="text-xs font-semibold text-apagado">Alternativas más baratas (desde {peso(base)})</p>
-      <ul className="mt-1 max-w-md divide-y divide-borde">
+    <div className="w-full min-w-0 max-sm:-ml-[3.25rem] max-sm:w-[calc(100%+3.25rem)]">
+      <p className="text-xs font-semibold text-apagado">Alternativas más baratas{porUnidad ? ' por ' + ({ kg: 'kilo', l: 'litro', u: 'unidad' }[lista.find((a) => a.porUnidad).porUnidad.unidad]) + ' (otros tamaños)' : ` (desde ${peso(base)})`}</p>
+      <ul className="mt-2 grid gap-2 sm:max-w-xl">
         {lista.map((a) => (
-          <li key={a.p.ean} className="flex items-baseline justify-between gap-3 py-2">
-            <button type="button" onClick={() => onVer(a.p.ean)} className="min-w-0 text-left hover:underline">
-              <span className="block truncate font-semibold">{a.p.n}</span>
-              <span className="block truncate text-xs text-apagado">{[a.p.m, a.p.u].filter(Boolean).join(' · ')}{a.mismaMarca ? ' · misma marca' : ''}</span>
+          <li key={a.p.ean}>
+            <button type="button" onClick={() => onVer(a.p.ean)}
+              className="flex w-full items-start justify-between gap-3 rounded-2xl border border-borde bg-hoja p-3 text-left hover:border-apagado">
+              <span className="min-w-0 flex-1">
+                <span className="block break-words font-semibold leading-snug">{a.p.n}</span>
+                <span className="mt-0.5 block text-xs text-apagado">{[a.p.m, a.p.u].filter(Boolean).join(' · ')}{a.mismaMarca ? ' · misma marca' : ''}</span>
+              </span>
+              <span className="shrink-0 text-right tabular-nums">
+                <span className="block font-bold">{peso(a.precio)}</span>
+                <span className="block text-xs text-apagado">{a.porUnidad ? `${peso(a.porUnidad.precio)}/${a.porUnidad.unidad} · −${a.pct}%` : `−${peso(a.ahorro)} · ${a.pct}%`}</span>
+              </span>
             </button>
-            <span className="shrink-0 text-right tabular-nums">
-              <span className="block font-bold">{peso(a.precio)}</span>
-              <span className="block text-xs text-apagado">−{peso(a.ahorro)} ({a.pct}%)</span>
-            </span>
           </li>
         ))}
       </ul>
@@ -310,11 +317,18 @@ export default function Comparador({ logos = {} }) {
 }
 
 function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
-  const { tiendas, productos, fuente, zona, actualizado } = datos;
+  const { tiendas: todasTiendas, productos, fuente, zona, actualizado } = datos;
   const [consulta, setConsulta] = useState('');
   const [marca, setMarca] = useState('');
   const [maxPrecio, setMaxPrecio] = useState('');
   const [enTiendas, setEnTiendas] = useState([]);
+  // 'solo': se muestran únicamente los supers elegidos. 'ocultar': se muestran todos menos los elegidos.
+  // En ambos casos solo aparecen productos con precio en al menos uno de los supers que quedan a la vista.
+  const [modoTiendas, setModoTiendas] = useState('solo');
+  const tiendas = useMemo(
+    () => (enTiendas.length ? todasTiendas.filter((t) => enTiendas.includes(t.id) === (modoTiendas === 'solo')) : todasTiendas),
+    [todasTiendas, modoTiendas, enTiendas],
+  );
   const [orden, setOrden] = useState('nombre');
   const [rubro, setRubro] = useState('todos');
   const [filtrosAbiertos, setFiltrosAbiertos] = useState(false);
@@ -382,7 +396,9 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
       if (porEan) { if (x.ean.replace(/^0+/, '') !== porEan) return false; }
       else if (palabras.length && !palabras.every((w) => x.texto.includes(w))) return false;
       if (m && !x.marca.includes(m)) return false;
-      if (enTiendas.some((id) => x.p.p[id] == null)) return false;
+      if (enTiendas.length) {
+        if (!tiendas.some((t) => x.p.p[t.id] != null)) return false;
+      }
       if (tope > 0) { const b = menorPrecio(x.p, tiendas); if (b == null || b > tope) return false; }
       return true;
     });
@@ -393,7 +409,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
     else if (orden === 'diferencia') todos = [...todos].sort((a, b) => dif(b.p) - dif(a.p));
     else todos = [...todos].sort((a, b) => a.p.n.localeCompare(b.p.n, 'es'));
     return todos.map((x) => x.p);
-  }, [consultaDif, indice, marca, maxPrecio, enTiendas, orden, tiendas]);
+  }, [consultaDif, indice, marca, maxPrecio, enTiendas, modoTiendas, orden, tiendas]);
 
   // Separadores por rubro: solo si los datos traen rubro (c). Los conteos respetan la búsqueda y los filtros.
   const hayRubros = useMemo(() => productos.some((p) => p.c), [productos]);
@@ -404,10 +420,10 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
   }, [baseRes]);
   const resultados = useMemo(() => (rubro === 'todos' || !hayRubros ? baseRes : baseRes.filter((p) => (p.c || 'Otros') === rubro)), [baseRes, rubro, hayRubros]);
 
-  useEffect(() => setVisibles(PAGINA), [consultaDif, marca, maxPrecio, enTiendas, orden, rubro]);
+  useEffect(() => setVisibles(PAGINA), [consultaDif, marca, maxPrecio, enTiendas, modoTiendas, orden, rubro]);
 
   const hayFiltros = !!(marca.trim() || maxPrecio || enTiendas.length || orden !== 'nombre');
-  const limpiarFiltros = () => { setMarca(''); setMaxPrecio(''); setEnTiendas([]); setOrden('nombre'); };
+  const limpiarFiltros = () => { setMarca(''); setMaxPrecio(''); setEnTiendas([]); setModoTiendas('solo'); setOrden('nombre'); };
   const alternarTienda = (id) => setEnTiendas((a) => (a.includes(id) ? a.filter((x) => x !== id) : [...a, id]));
 
   // Descuentos del día elegido, por súper (no hace falta elegir medio de pago).
@@ -599,9 +615,19 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
                 <Selector etiqueta="Ordenar por" valor={orden} opciones={OPCIONES_ORDEN} onCambio={setOrden} />
               </div>
               <fieldset>
-                <legend className="text-sm font-semibold">Solo productos con precio en</legend>
+                <legend className="text-sm font-semibold">Supers</legend>
+                <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Qué hacer con los supers elegidos">
+                  {[['solo', 'Mostrar solo estos supers'], ['ocultar', 'No mostrar estos supers']].map(([id, nombre]) => (
+                    <button key={id} type="button" aria-pressed={modoTiendas === id} onClick={() => setModoTiendas(id)} className={chip(modoTiendas === id)}>{nombre}</button>
+                  ))}
+                </div>
+                <p className="mt-2 text-xs text-apagado">
+                  {modoTiendas === 'solo'
+                    ? 'Solo se muestran los precios de los supers que elijas. Elegí uno o más.'
+                    : 'Se muestran todos los supers menos los que elijas, y no aparecen productos que solo estén en esos.'}
+                </p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {tiendas.map((t) => <button key={t.id} type="button" aria-pressed={enTiendas.includes(t.id)} onClick={() => alternarTienda(t.id)} className={chip(enTiendas.includes(t.id))}>{t.nombre}</button>)}
+                  {todasTiendas.map((t) => <button key={t.id} type="button" aria-pressed={enTiendas.includes(t.id)} onClick={() => alternarTienda(t.id)} className={chip(enTiendas.includes(t.id)) + (modoTiendas === 'ocultar' && enTiendas.includes(t.id) ? ' line-through' : '')}>{t.nombre}</button>)}
                 </div>
               </fieldset>
               {hayFiltros && <div><button type="button" onClick={limpiarFiltros} className="text-sm font-bold underline underline-offset-4 hover:text-alerta">Quitar filtros</button></div>}

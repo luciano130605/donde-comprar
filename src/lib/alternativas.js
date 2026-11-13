@@ -30,29 +30,57 @@ export function palabras(p) {
     .filter((w) => w.length >= 3 && !/^\d/.test(w) && !SOBRAN.has(w) && !UNIDAD[w] && !marca.has(w));
 }
 
+const POR = { g: ['kg', 1000], ml: ['l', 1000], un: ['u', 1] };
+
+// Devuelve { lista, parecidos }: lista con las alternativas más baratas y cuántos productos parecidos
+// (aunque no sean más baratos) se encontraron, para poder decir "este ya es de los más baratos".
+// Primero busca de tamaño muy parecido (compara el precio del envase); si no hay nada, amplía el tamaño
+// y compara por kilo/litro/unidad.
 export function alternativasMasBaratas(p, productos, menor, max = 5) {
   const base = menor(p);
   const mias = palabras(p);
-  if (base == null || !mias.length) return [];
+  if (base == null || !mias.length) return { lista: [], parecidos: 0 };
   const tam = tamano(p);
   const marca = norm(p.m);
-  const piso = Math.min(2, mias.length);
-  const out = [];
-  for (const q of productos) {
-    if (q.ean === p.ean) continue;
-    if (p.c && q.c && p.c !== q.c) continue;
-    const precio = menor(q);
-    if (precio == null || precio >= base * 0.97) continue;
-    if (tam) {
-      const t = tamano(q);
-      if (!t || t.dim !== tam.dim || t.valor < tam.valor * 0.8 || t.valor > tam.valor * 1.25) continue;
+  const unit = tam ? base / tam.valor : null;
+  const niveles = [
+    { rango: [0.8, 1.25], ratio: 0.4, piso: Math.min(2, mias.length), porUnidad: false },
+    { rango: [0.4, 2.5], ratio: 0.3, piso: 1, porUnidad: true },
+  ];
+  let parecidos = 0;
+  for (const n of niveles) {
+    if (n.porUnidad && !tam) break;
+    const out = [];
+    let vistos = 0;
+    for (const q of productos) {
+      if (q.ean === p.ean) continue;
+      if (p.c && q.c && p.c !== q.c) continue;
+      const precio = menor(q);
+      if (precio == null) continue;
+      const t = tam ? tamano(q) : null;
+      if (tam && (!t || t.dim !== tam.dim || t.valor < tam.valor * n.rango[0] || t.valor > tam.valor * n.rango[1])) continue;
+      const suyas = new Set(palabras(q));
+      let hit = 0;
+      for (const w of mias) if (suyas.has(w)) hit++;
+      if (!suyas.has(mias[0]) || hit < n.piso || hit / mias.length < n.ratio) continue;
+      vistos++;
+      const unitQ = t ? precio / t.valor : null;
+      const masBarato = n.porUnidad ? unitQ < unit * 0.97 : precio < base * 0.97;
+      if (!masBarato) continue;
+      const ref = n.porUnidad ? unit : base;
+      const val = n.porUnidad ? unitQ : precio;
+      const [uTxt, k] = POR[tam?.dim] || ['u', 1];
+      out.push({
+        p: q, precio, ahorro: base - precio, pct: Math.round(((ref - val) / ref) * 100),
+        mismaMarca: !!marca && norm(q.m) === marca,
+        porUnidad: n.porUnidad ? { precio: unitQ * k, unidad: uTxt } : null,
+      });
     }
-    const suyas = new Set(palabras(q));
-    let hit = 0;
-    for (const w of mias) if (suyas.has(w)) hit++;
-    if (!suyas.has(mias[0]) || hit < piso || hit / mias.length < 0.4) continue;
-    out.push({ p: q, precio, ahorro: base - precio, pct: Math.round(((base - precio) / base) * 100), mismaMarca: !!marca && norm(q.m) === marca });
+    parecidos = Math.max(parecidos, vistos);
+    if (out.length) {
+      out.sort((a, b) => (b.mismaMarca - a.mismaMarca) || b.pct - a.pct);
+      return { lista: out.slice(0, max), parecidos };
+    }
   }
-  out.sort((a, b) => (b.mismaMarca - a.mismaMarca) || a.precio - b.precio);
-  return out.slice(0, max);
+  return { lista: [], parecidos };
 }
