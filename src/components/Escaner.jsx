@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { HugeiconsIcon } from '@hugeicons/react';
 import { FlashIcon, FlashOffIcon} from '@hugeicons/core-free-icons';
-
-
 // Lee códigos de barras con la cámara. Usa BarcodeDetector (Chrome/Android) y, si no existe
 // (Safari/iPhone, Firefox), cae a ZXing, que se descarga recién cuando se abre el escáner.
 const FORMATOS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
@@ -98,7 +96,7 @@ export default function Escaner({ onCodigo, onCerrar }) {
           {linterna !== null && (
             <button type="button" onClick={alternarLinterna} aria-pressed={linterna}
               className={'absolute right-3 top-3 h-10 rounded-full px-4 text-sm font-bold ' + (linterna ? 'bg-white text-black' : 'bg-black/60 text-white')}>
-              <HugeiconsIcon icon={linterna ? 'FlashOffIcon' : 'FlashIcon'} className="mr-2 inline h-5 w-5" />
+              <HugeiconsIcon icon={linterna ? FlashOffIcon : FlashIcon} className="mr-2 inline h-5 w-5" />
             </button>
           )}
         </div>
