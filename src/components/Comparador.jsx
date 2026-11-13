@@ -621,7 +621,6 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
               <button type="button" onClick={() => { setEscaneando(true); if (vista !== 'productos') setVista('productos'); }} aria-label="Escanear código de barras"
                 className="absolute left-1/2 -top-8 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 flex-col items-center justify-center rounded-full border-4 border-fondo bg-primario text-primario-texto shadow-lg shadow-black/30 transition-transform active:scale-95">
                 <Icono n="codigo" className="h-7 w-7" />
-                <span className="text-[0.6rem] font-bold uppercase tracking-wide">Escanear</span>
               </button>
             </div>
           ))}
