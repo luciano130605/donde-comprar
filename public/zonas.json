@@ -6,26 +6,26 @@
       "nombre": "CABA",
       "archivo": "precios/caba.json",
       "fuente": "sepa",
-      "actualizado": "2026-11-12T09:30:00-03:00",
-      "productos": 13057,
-      "tiendas": 4
+      "actualizado": "2026-11-13T09:30:00-03:00",
+      "productos": 16709,
+      "tiendas": 7
     },
     {
       "id": "buenos-aires",
       "nombre": "Buenos Aires",
       "archivo": "precios/buenos-aires.json",
       "fuente": "sepa",
-      "actualizado": "2026-11-12T09:30:00-03:00",
-      "productos": 17352,
-      "tiendas": 8
+      "actualizado": "2026-11-13T09:30:00-03:00",
+      "productos": 20410,
+      "tiendas": 11
     },
     {
       "id": "online",
       "nombre": "Tiendas online (todo el país)",
       "archivo": "precios/online.json",
       "fuente": "online",
-      "actualizado": "2026-11-12T19:03:24.808Z",
-      "productos": 20318,
+      "actualizado": "2026-11-13T19:29:25.982Z",
+      "productos": 20579,
       "tiendas": 9
     }
   ]
