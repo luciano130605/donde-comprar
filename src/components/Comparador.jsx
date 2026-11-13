@@ -1,10 +1,11 @@
 import { createContext, useContext, useDeferredValue, useEffect, useId, useMemo, useRef, useState } from 'react';
+import Escaner from './Escaner.jsx';
 import promosCfg from '../../config/promos.json';
 import generadas from '../../config/promos.generated.json';
 import { disponiblesHoy, estadoRegla, NOMBRES_DIA } from '../lib/promos.js';
 import { HugeiconsIcon } from '@hugeicons/react';
 import {
-  Search01Icon, FilterMailIcon, Tag01Icon, DiscountIcon, ArrowUpRight01Icon, ArrowDown01Icon, Tick02Icon, Moon02Icon, Sun03Icon, PackageIcon, DrinkIcon, MilkBottleIcon, SteakIcon, AppleIcon, IceCream01Icon, CleanIcon, BodySoapIcon, BabyBottleIcon, PawPrintIcon, Home01Icon, GridViewIcon,
+  Search01Icon, BarCode01Icon, FilterMailIcon, Tag01Icon, DiscountIcon, ArrowUpRight01Icon, ArrowDown01Icon, Tick02Icon, Moon02Icon, Sun03Icon, PackageIcon, DrinkIcon, MilkBottleIcon, SteakIcon, AppleIcon, IceCream01Icon, CleanIcon, BodySoapIcon, BabyBottleIcon, PawPrintIcon, Home01Icon, GridViewIcon,
   Package01Icon,
   CheeseIcon,
   IceCubesIcon,
@@ -31,6 +32,7 @@ const chip = (on) => 'h-9 rounded-full px-3.5 text-sm font-bold transition-color
 // Íconos: Hugeicons. Los de rubro usan el nombre del rubro como clave.
 const ICONOS = {
   buscar: Search01Icon,
+  codigo: BarCode01Icon,
   filtros: FilterMailIcon,
   etiqueta: Tag01Icon,
   descuento: DiscountIcon,
@@ -286,6 +288,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
   const [vista, setVista] = useState('productos');
   const [visibles, setVisibles] = useState(PAGINA);
   const [listo, setListo] = useState(false);
+  const [escaneando, setEscaneando] = useState(false);
 
   const consultaDif = useDeferredValue(consulta);
   const [pagos, setPagos] = useState(PAGOS_INICIAL);
@@ -303,7 +306,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
     try { localStorage.setItem('super-pagos', JSON.stringify(pagos)); } catch { }
   }, [pagos, listo]);
 
-  const indice = useMemo(() => productos.map((p) => ({ p, texto: limpiar(`${p.n} ${p.m}`), marca: limpiar(p.m || '') })), [productos]);
+  const indice = useMemo(() => productos.map((p) => ({ p, ean: String(p.ean || ''), texto: limpiar(`${p.n} ${p.m}`), marca: limpiar(p.m || '') })), [productos]);
   const marcas = useMemo(() => {
     const c = new Map();
     for (const p of productos) if (p.m) c.set(p.m, (c.get(p.m) || 0) + 1);
@@ -314,8 +317,10 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
     const palabras = limpiar(consultaDif).split(/\s+/).filter(Boolean);
     const m = limpiar(marca.trim());
     const tope = parseFloat(maxPrecio);
+    const porEan = /^\d{8,14}$/.test(consultaDif.trim()) ? consultaDif.trim().replace(/^0+/, '') : null;
     let todos = indice.filter((x) => {
-      if (palabras.length && !palabras.every((w) => x.texto.includes(w))) return false;
+      if (porEan) { if (x.ean.replace(/^0+/, '') !== porEan) return false; }
+      else if (palabras.length && !palabras.every((w) => x.texto.includes(w))) return false;
       if (m && !x.marca.includes(m)) return false;
       if (enTiendas.some((id) => x.p.p[id] == null)) return false;
       if (tope > 0) { const b = menorPrecio(x.p, tiendas); if (b == null || b > tope) return false; }
@@ -457,6 +462,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 pb-32 sm:px-6">
+      {escaneando && <Escaner onCerrar={() => setEscaneando(false)} onCodigo={(c) => { setConsulta(c); setEscaneando(false); }} />}
       <header className="sticky top-0 z-20 -mx-4 bg-fondo px-4 pb-3 pt-3 sm:-mx-6 sm:px-6">
         <div className="flex items-center gap-2">
           <label className="relative min-w-0 flex-1">
@@ -465,6 +471,10 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
             <input type="search" value={consulta} onChange={(e) => { setConsulta(e.target.value); if (vista !== 'productos') setVista('productos'); }} placeholder="Buscá un producto"
               className="h-11 w-full rounded-2xl bg-panel pl-11 pr-4 font-semibold placeholder:font-semibold placeholder:text-apagado" />
           </label>
+          <button type="button" onClick={() => { setEscaneando(true); if (vista !== 'productos') setVista('productos'); }} aria-label="Escanear código de barras"
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-panel">
+            <Icono n="codigo" className="h-5 w-5" />
+          </button>
           <button type="button" onClick={() => { setFiltrosAbiertos((v) => !v); if (vista !== 'productos') setVista('productos'); }} aria-expanded={filtrosAbiertos} aria-label={hayFiltros ? 'Filtros (activos)' : 'Filtros'}
             className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sello text-sello-texto">
             <Icono n="filtros" className="h-5 w-5" />
