@@ -1,5 +1,7 @@
 import { createContext, useContext, useDeferredValue, useEffect, useId, useMemo, useRef, useState } from 'react';
 import Escaner from './Escaner.jsx';
+import { alternativasMasBaratas } from '../lib/alternativas.js';
+import { zonaPorUbicacion } from '../lib/zona-cercana.js';
 import promosCfg from '../../config/promos.json';
 import generadas from '../../config/promos.generated.json';
 import { disponiblesHoy, estadoRegla, NOMBRES_DIA } from '../lib/promos.js';
@@ -217,6 +219,37 @@ function BotonTema() {
   );
 }
 
+function Alternativas({ p, productos, tiendas, onVer }) {
+  const [lista, setLista] = useState(null);
+  if (lista === null) {
+    return (
+      <button type="button" onClick={() => setLista(alternativasMasBaratas(p, productos, (x) => menorPrecio(x, tiendas)))}
+        className="rounded-full border border-borde bg-hoja px-3 py-1.5 text-xs font-bold hover:border-apagado">Alternativas más baratas</button>
+    );
+  }
+  if (!lista.length) return <p className="text-xs text-apagado">No encontramos alternativas más baratas de tamaño parecido.</p>;
+  const base = menorPrecio(p, tiendas);
+  return (
+    <div className="w-full">
+      <p className="text-xs font-semibold text-apagado">Alternativas más baratas (desde {peso(base)})</p>
+      <ul className="mt-1 max-w-md divide-y divide-borde">
+        {lista.map((a) => (
+          <li key={a.p.ean} className="flex items-baseline justify-between gap-3 py-2">
+            <button type="button" onClick={() => onVer(a.p.ean)} className="min-w-0 text-left hover:underline">
+              <span className="block truncate font-semibold">{a.p.n}</span>
+              <span className="block truncate text-xs text-apagado">{[a.p.m, a.p.u].filter(Boolean).join(' · ')}{a.mismaMarca ? ' · misma marca' : ''}</span>
+            </button>
+            <span className="shrink-0 text-right tabular-nums">
+              <span className="block font-bold">{peso(a.precio)}</span>
+              <span className="block text-xs text-apagado">−{peso(a.ahorro)} ({a.pct}%)</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Comparador({ logos = {} }) {
   const base = import.meta.env.BASE_URL;
   const [zonas, setZonas] = useState(null); // índice: [{ id, nombre, archivo, ... }]
@@ -289,6 +322,33 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
   const [visibles, setVisibles] = useState(PAGINA);
   const [listo, setListo] = useState(false);
   const [escaneando, setEscaneando] = useState(false);
+  const [avisoZona, setAvisoZona] = useState('');
+  // La barra de abajo se esconde al bajar y vuelve al subir (o al estar arriba de todo).
+  const [barraOculta, setBarraOculta] = useState(false);
+  useEffect(() => {
+    let ultimo = window.scrollY;
+    let esperando = false;
+    const alScroll = () => {
+      if (esperando) return;
+      esperando = true;
+      requestAnimationFrame(() => {
+        esperando = false;
+        const y = window.scrollY;
+        if (y < 80) setBarraOculta(false);
+        else if (y > ultimo + 8) setBarraOculta(true);
+        else if (y < ultimo - 8) setBarraOculta(false);
+        if (Math.abs(y - ultimo) > 8) ultimo = y;
+      });
+    };
+    window.addEventListener('scroll', alScroll, { passive: true });
+    return () => window.removeEventListener('scroll', alScroll);
+  }, []);
+  const inputBusqueda = useRef(null);
+  useEffect(() => {
+    if (!avisoZona || avisoZona.startsWith('Buscando')) return;
+    const t = setTimeout(() => setAvisoZona(''), 7000);
+    return () => clearTimeout(t);
+  }, [avisoZona]);
 
   const consultaDif = useDeferredValue(consulta);
   const [pagos, setPagos] = useState(PAGOS_INICIAL);
@@ -359,6 +419,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
 
   const fecha = actualizado ? new Date(actualizado).toLocaleDateString('es-AR', { day: 'numeric', month: 'long' }) : '';
   const buscando = consultaDif.trim() !== '';
+  const porCodigo = /^\d{8,14}$/.test(consultaDif.trim());
   const agrupar = hayRubros && rubro === 'todos' && !buscando;
   const mostrados = resultados.slice(0, visibles);
 
@@ -394,6 +455,33 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
     return { mejor, pendiente };
   };
   const condiciones = (r) => [r.minimo != null ? `mín. ${peso(r.minimo)}` : null, r.tope != null ? `tope ${peso(r.tope)}` : null].filter(Boolean).join(' · ');
+
+  const usarUbicacion = () => {
+    if (!navigator.geolocation) { setAvisoZona('Tu navegador no permite usar la ubicación.'); return; }
+    setAvisoZona('Buscando tu ubicación…');
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const z = zonas.find((x) => x.id === zonaPorUbicacion(pos.coords.latitude, pos.coords.longitude));
+        if (z) { onZona(z.id); setAvisoZona(`Zona sugerida: ${z.nombre}`); }
+        else setAvisoZona('Tu ubicación no está en una zona disponible. Probá con Tiendas online.');
+      },
+      () => setAvisoZona('No pudimos obtener tu ubicación.'),
+      { timeout: 10000, maximumAge: 600000 },
+    );
+  };
+  const verPorCodigo = (ean) => { setConsulta(ean); setVista('productos'); window.scrollTo({ top: 0 }); };
+  const compartir = (p, ps) => {
+    const lineas = [
+      `*${p.n}*`,
+      [p.m, p.u].filter(Boolean).join(' · ') || null,
+      '',
+      ...ps.map((x, i) => `${i === 0 ? '✅' : '•'} ${x.t.nombre}: ${peso(x.fin)}${x.mejor ? ` (con −${x.mejor.regla.valor}%)` : ''}`),
+      '',
+      `Precios en ${zona}${fecha ? ` · ${fecha}` : ''}`,
+      window.location.origin,
+    ].filter((l) => l !== null);
+    window.open('https://wa.me/?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
+  };
 
   const filaProducto = (p) => {
     // Precios con el mejor descuento de hoy aplicado; se ordena por el precio final.
@@ -453,6 +541,10 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
                 <li className="py-2 text-xs text-apagado">Sin precio en: {tiendas.filter((t) => p.p[t.id] == null).map((t) => t.nombre).join(', ')}</li>
               )}
             </ul>
+            <div className="mt-2 flex flex-wrap items-start gap-2">
+              <button type="button" onClick={() => compartir(p, ps)} className="rounded-full border border-borde bg-hoja px-3 py-1.5 text-xs font-bold hover:border-apagado">Compartir por WhatsApp</button>
+              <Alternativas p={p} productos={productos} tiendas={tiendas} onVer={verPorCodigo} />
+            </div>
           </details>
         )}
       </li>
@@ -468,7 +560,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
           <label className="relative min-w-0 flex-1">
             <span className="sr-only">Buscar producto</span>
             <Icono n="buscar" className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-apagado" />
-            <input type="search" value={consulta} onChange={(e) => { setConsulta(e.target.value); if (vista !== 'productos') setVista('productos'); }} placeholder="Buscá un producto"
+            <input ref={inputBusqueda} type="search" value={consulta} onChange={(e) => { setConsulta(e.target.value); if (vista !== 'productos') setVista('productos'); }} placeholder="Buscá un producto"
               className="h-11 w-full rounded-2xl bg-panel pl-11 pr-4 font-semibold placeholder:font-semibold placeholder:text-apagado" />
           </label>
           <button type="button" onClick={() => { setFiltrosAbiertos((v) => !v); if (vista !== 'productos') setVista('productos'); }} aria-expanded={filtrosAbiertos} aria-label={hayFiltros ? 'Filtros (activos)' : 'Filtros'}
@@ -479,7 +571,8 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
         </div>
         <div className="mt-2 flex items-center gap-2">
           {zonas && zonas.length > 1 && <Selector compacto etiqueta="Zona" className="w-auto min-w-[9rem] max-w-[15rem]" valor={zonaId} opciones={zonas.map((z) => ({ value: z.id, label: z.nombre }))} onCambio={onZona} />}
-          <span className="truncate text-sm text-apagado">{cargandoZona ? 'Cargando…' : `${productos.length.toLocaleString('es-AR')} productos${fecha ? ` · ${fecha}` : ''}`}</span>
+          {zonas && zonas.length > 1 && <button type="button" onClick={usarUbicacion} className="h-9 shrink-0 rounded-full border border-borde bg-hoja px-3 text-xs font-bold hover:border-apagado">Cerca mío</button>}
+          <span className="truncate text-sm text-apagado" aria-live="polite">{avisoZona || (cargandoZona ? 'Cargando…' : `${productos.length.toLocaleString('es-AR')} productos${fecha ? ` · ${fecha}` : ''}`)}</span>
           <span className="ml-auto"><BotonTema /></span>
         </div>
       </header>
@@ -556,7 +649,20 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
                 <span className="ml-auto rounded-full bg-panel px-2.5 py-0.5 text-sm font-bold tabular-nums" aria-live="polite">{resultados.length.toLocaleString('es-AR')}</span>
               </header>
               <ul className="divide-y divide-borde">{mostrados.map(filaProducto)}</ul>
-              {!resultados.length && <p className="px-1 py-8 text-apagado">Ningún producto coincide con la búsqueda y los filtros. Probá con otra palabra o con menos filtros.</p>}
+              {!resultados.length && porCodigo && (
+                <div className="px-1 py-8">
+                  <p className="font-semibold">No encontramos el código {consultaDif.trim()} en {zona}.</p>
+                  <p className="mt-1 text-sm text-apagado">Puede que no esté en la base de precios o que ese súper no lo informe.</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <button type="button" onClick={() => { setConsulta(''); inputBusqueda.current?.focus(); }} className="rounded-full bg-sello px-4 py-2 text-sm font-bold text-sello-texto">Buscar por nombre</button>
+                    {zonas && zonaId !== 'online' && zonas.some((z) => z.id === 'online') && (
+                      <button type="button" onClick={() => onZona('online')} className="rounded-full border border-borde bg-hoja px-4 py-2 text-sm font-bold hover:border-apagado">Probar en tiendas online</button>
+                    )}
+                    <button type="button" onClick={() => setEscaneando(true)} className="rounded-full border border-borde bg-hoja px-4 py-2 text-sm font-bold hover:border-apagado">Escanear otro</button>
+                  </div>
+                </div>
+              )}
+              {!resultados.length && !porCodigo && <p className="px-1 py-8 text-apagado">Ningún producto coincide con la búsqueda y los filtros. Probá con otra palabra o con menos filtros.</p>}
               {resultados.length > mostrados.length && (
                 <button type="button" onClick={() => setVisibles((v) => v + PAGINA)} className="mt-1 flex h-11 w-full items-center justify-center rounded-2xl bg-suave font-bold text-suave-texto transition-opacity hover:opacity-85">
                   Mostrar {Math.min(PAGINA, resultados.length - mostrados.length)} más
@@ -609,6 +715,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
       </footer>
 
       <div className="caja pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4">
+        <div className={'transition-transform duration-300 ease-out motion-reduce:transition-none ' + (barraOculta ? 'translate-y-[3.75rem]' : '')}>
         <nav aria-label="Secciones" className="pointer-events-auto flex gap-1 rounded-full border border-borde bg-hoja/35 p-1.5 shadow-xl shadow-black/15 backdrop-blur-md">
           {[['productos', 'Precios', 'buscar'], null, ['descuentos', 'Descuentos', 'descuento']].map((it) => it ? (
             <button key={it[0]} type="button" aria-current={vista === it[0] ? 'page' : undefined} onClick={() => irA(it[0])}
@@ -625,6 +732,7 @@ function Tablero({ datos, zonas, zonaId, onZona, cargandoZona }) {
             </div>
           ))}
         </nav>
+        </div>
       </div>
     </div>
   );

@@ -45,5 +45,11 @@ if (fs.existsSync(dirLogos)) {
   </head>
   <body>
     <Comparador client:load logos={logos} />
+    {import.meta.env.PROD && (
+      <script is:inline define:vars={{ base: import.meta.env.BASE_URL }}>
+        // Service worker: la app y los últimos precios quedan disponibles sin conexión.
+        if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register(base + 'sw.js').catch(function () {}); });
+      </script>
+    )}
   </body>
 </html>
