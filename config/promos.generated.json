@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-13T19:30:37.830Z",
+  "generadoEl": "2026-11-14T18:23:37.552Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -476,39 +476,6 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
-      "valor": 30,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        4
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-527",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En compras presenciales pagando desde tu celular CON VISA DÉBITO NFC con Bancos seleccionados.",
-      "bancoId": 0,
-      "icono": "logo_visa1.png",
-      "textoOriginal": {
-        "textoDescuento": "30% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Jueves"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
       "valor": 25,
       "tope": 30000,
       "topePeriodo": null,
@@ -766,39 +733,6 @@
         "textoDescuento": "30% DE DESCUENTO",
         "observacion": "Sin tope de reintegro. No acumula con promo Modo martes. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
         "diasVigencia": "Martes"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 15,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        5
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-481",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de débito.",
-      "bancoId": 0,
-      "icono": "logo_debito2.png",
-      "textoOriginal": {
-        "textoDescuento": "15% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Viernes"
       },
       "aVerificar": [
         "medioPago",
@@ -1229,6 +1163,74 @@
         "textoDescuento": "15% DE DESCUENTO",
         "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
         "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-538",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
+      "bancoId": 74,
+      "icono": "logo_mercadopago.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "No válido para venta online (Coto Digital). Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Sabado y Domingo"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-527",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En compras presenciales pagando desde tu celular CON VISA DÉBITO NFC con Bancos seleccionados.",
+      "bancoId": 0,
+      "icono": "logo_visa1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
       },
       "aVerificar": [
         "medioPago",
