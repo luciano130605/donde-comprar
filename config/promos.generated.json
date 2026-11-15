@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-14T18:23:37.552Z",
+  "generadoEl": "2026-11-15T18:45:06.614Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
