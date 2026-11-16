@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-15T18:45:06.614Z",
+  "generadoEl": "2026-11-16T22:06:17.646Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -76,7 +76,7 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
-      "valor": 20,
+      "valor": 25,
       "tope": null,
       "topePeriodo": null,
       "minimo": null,
@@ -89,50 +89,16 @@
       "vigenteHasta": null,
       "verificadaEl": null,
       "revisar": true,
-      "id": "coto-482",
+      "id": "coto-539",
       "tienda": "coto",
       "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago con tarjetas de crédito TCI",
-      "bancoId": 8,
-      "icono": "logo_tci.png",
+      "medioTexto": "En un pago con Tarjetas prepagas Visa de PERSONAL PAY",
+      "bancoId": 0,
+      "icono": "Personal_pay.png",
       "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
+        "textoDescuento": "25% DE DESCUENTO",
         "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
         "diasVigencia": "Martes"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        0,
-        6
-      ],
-      "canal": "online",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-439",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago con tarjetas de Visa débito y débito Maestro.",
-      "bancoId": 16,
-      "icono": "logo_ciudad1.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Válido para el Sábado 14/11/2026 y Domingo 15/11/2026. Aplican exclusiones. Ver legales.",
-        "diasVigencia": "Sabado y Domingo"
       },
       "aVerificar": [
         "medioPago",
@@ -209,6 +175,73 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        2
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-482",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito TCI",
+      "bancoId": 8,
+      "icono": "logo_tci.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": 30000,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        1
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-440",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago con tarjetas de crédito Visa, Mastercard y Cabal",
+      "bancoId": 16,
+      "icono": "logo_ciudad1.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Tope de reintegro $30.000. En compras en un pago. Aplica en los productos sin oferta, aplican excluidos, ver legales.",
+        "diasVigencia": "Lunes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "topePeriodo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
       "valor": 25,
       "tope": null,
       "topePeriodo": null,
@@ -269,40 +302,6 @@
       "aVerificar": [
         "medioPago",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 25,
-      "tope": 30000,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        1
-      ],
-      "canal": "online",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-440",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago con tarjetas de crédito Visa, Mastercard y Cabal",
-      "bancoId": 16,
-      "icono": "logo_ciudad1.png",
-      "textoOriginal": {
-        "textoDescuento": "25% DE DESCUENTO",
-        "observacion": "Tope de reintegro $30.000. En compras en un pago. Aplica en los productos sin oferta, aplican excluidos, ver legales.",
-        "diasVigencia": "Lunes"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "topePeriodo",
         "vigencia"
       ]
     },
@@ -504,40 +503,6 @@
         "medioPago",
         "minimo",
         "topePeriodo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        0,
-        6
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-438",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago con tarjetas de Visa débito y débito Maestro.",
-      "bancoId": 16,
-      "icono": "logo_ciudad1.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Válido para el Sábado 14/11/2026 y Domingo 15/11/2026. Aplican exclusiones. Ver legales.",
-        "diasVigencia": "Sabado y Domingo"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
         "vigencia"
       ]
     },
@@ -1167,41 +1132,6 @@
       "aVerificar": [
         "medioPago",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 15,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        0,
-        6
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-538",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
-      "bancoId": 74,
-      "icono": "logo_mercadopago.png",
-      "textoOriginal": {
-        "textoDescuento": "15% DE DESCUENTO",
-        "observacion": "No válido para venta online (Coto Digital). Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Sabado y Domingo"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "tope",
         "vigencia"
       ]
     },
