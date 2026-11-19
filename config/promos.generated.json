@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-18T20:22:45.548Z",
+  "generadoEl": "2026-11-19T20:24:24.815Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -70,40 +70,6 @@
       "aVerificar": [
         "medioPago",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        3
-      ],
-      "canal": "online",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-470",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago si sos miembro de nuestra Comunidad. Con todos los medios de pago",
-      "bancoId": 0,
-      "icono": "logo_comunidad.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "Siendo miembro de Comunidad Coto - Aplican exclusiones. Ver legales - Sin límite de reintegro.",
-        "diasVigencia": "Miercoles"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "tope",
         "vigencia"
       ]
     },
@@ -509,6 +475,39 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
+      "valor": 30,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-527",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En compras presenciales pagando desde tu celular CON VISA DÉBITO NFC con Bancos seleccionados.",
+      "bancoId": 0,
+      "icono": "logo_visa1.png",
+      "textoOriginal": {
+        "textoDescuento": "30% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
       "valor": 25,
       "tope": 30000,
       "topePeriodo": null,
@@ -581,7 +580,7 @@
       "topePeriodo": null,
       "minimo": null,
       "dias": [
-        5
+        4
       ],
       "canal": "presencial",
       "acumulable": null,
@@ -589,20 +588,87 @@
       "vigenteHasta": null,
       "verificadaEl": null,
       "revisar": true,
-      "id": "coto-459",
+      "id": "coto-455",
       "tienda": "coto",
       "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
-      "bancoId": 0,
-      "icono": "logo_mercadopago.png",
+      "medioTexto": "PLAN SUELDO  Exclusivo en sucursales. En un pago con tarjetas de crédito Visa, Mastercard y Visa débito.",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
       "textoOriginal": {
         "textoDescuento": "25% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Viernes"
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
       },
       "aVerificar": [
         "medioPago",
         "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-453",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de Visa débito.",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-458",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con todos los medios de pago, presentando DNI",
+      "bancoId": 0,
+      "icono": "logo_jubiladosypensionados.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Para todos los jubilados y pensionados, en un pago con todos los medios de pago presentando DNI. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Jueves"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
         "vigencia"
       ]
     },
@@ -632,6 +698,39 @@
         "textoDescuento": "25% DE DESCUENTO",
         "observacion": "Sin tope de reintegro. Aplica para compras presenciales en un pago, en los productos sin oferta. Aplican excluidos, ver legales.",
         "diasVigencia": "Martes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 25,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        5
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-459",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
+      "bancoId": 0,
+      "icono": "logo_mercadopago.png",
+      "textoOriginal": {
+        "textoDescuento": "25% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Viernes"
       },
       "aVerificar": [
         "medioPago",
@@ -741,39 +840,6 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        4
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-453",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de Visa débito.",
-      "bancoId": 5,
-      "icono": "logo_icbc_1.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
-        "diasVigencia": "Jueves"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
       "valor": 30,
       "tope": null,
       "topePeriodo": null,
@@ -801,40 +867,6 @@
       "aVerificar": [
         "medioPago",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 15,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        4
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-458",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En un pago con todos los medios de pago, presentando DNI",
-      "bancoId": 0,
-      "icono": "logo_jubiladosypensionados.png",
-      "textoOriginal": {
-        "textoDescuento": "15% DE DESCUENTO",
-        "observacion": "Para todos los jubilados y pensionados, en un pago con todos los medios de pago presentando DNI. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Jueves"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "tope",
         "vigencia"
       ]
     },
@@ -1167,39 +1199,6 @@
         "minimo",
         "vigencia",
         "dias"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 30,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        4
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-527",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En compras presenciales pagando desde tu celular CON VISA DÉBITO NFC con Bancos seleccionados.",
-      "bancoId": 0,
-      "icono": "logo_visa1.png",
-      "textoOriginal": {
-        "textoDescuento": "30% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Jueves"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
       ]
     },
     {
@@ -1969,38 +1968,6 @@
         "medioPago",
         "tope",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": null,
-      "valor": null,
-      "tope": 7500,
-      "topePeriodo": "mes",
-      "minimo": 35000,
-      "dias": [
-        5,
-        6
-      ],
-      "canal": "ambos",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "dia-bna-170s3qw",
-      "tienda": "dia",
-      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
-      "medioTexto": "BNA",
-      "textoOriginal": {
-        "titulo": "BNA + MODO",
-        "terms": "PROMOCIÓN VÁLIDA EN LA REPÚBLICA ARGENTINA TODOS LOS DÍAS VIERNES Y SÁBADOS DESDE EL 01/10/2026 AL 31/12/2026, AMBAS FECHAS INCLUSIVE, PARA COMPRAS CON TARJETAS DE CRÉDITO MASTERCARD DEL BANCO NACIÓN PAGANDO EXCLUSIVAMENTE CON BNA+ MODO ESCANEANDO QR MODO EN COMERCIOS ADHERIDOS DE LOS SUPERMERCADOS DÍA. TOPE DE DEVOLUCIÓN: HASTA $ 7.500 POR CLIENTE (SE CONSIDERA CLIENTE PARA EL BNA EL CUIT) POR MES (SE CONSIDERA MES PARA EL BNA DEL PRIMERO AL ÚLTIMO DÍA DE CADA MES CALENDARIO) DURANTE LA VIGENCIA DE LA PROMOCIÓN. MÍNIMO DE COMPRA: $ 35.000. EL DESCUENTO SE VERÁ REFLEJADO EN EN LA CUENTA MONETA"
-      },
-      "aVerificar": [
-        "medioPago",
-        "valor",
-        "tipo",
         "vigencia"
       ]
     },
