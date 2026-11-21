@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-20T20:08:50.895Z",
+  "generadoEl": "2026-11-21T18:53:10.384Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -871,39 +871,6 @@
         "minimo",
         "vigencia",
         "dias"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 15,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        5
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-479",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito.",
-      "bancoId": 0,
-      "icono": "logo_tarjetascredito2.png",
-      "textoOriginal": {
-        "textoDescuento": "15% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Viernes"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
       ]
     },
     {
