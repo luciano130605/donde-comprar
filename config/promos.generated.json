@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-22T19:32:03.417Z",
+  "generadoEl": "2026-11-23T23:40:10.711Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -475,41 +475,6 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        0,
-        6
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-540",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
-      "bancoId": 0,
-      "icono": "logo_mercadopago.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "No válido para venta online (Coto Digital). Aplican exclusiones. Ver legal.",
-        "diasVigencia": "Sabado y Domingo"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "tope",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
       "valor": 30,
       "tope": null,
       "topePeriodo": null,
@@ -633,40 +598,6 @@
         "textoDescuento": "20% DE DESCUENTO",
         "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legales.",
         "diasVigencia": "Jueves"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 30,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        0,
-        6
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-450",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "Exclusivo en sucursales. Abonando con tarjetas de débito y crédito Cabal Credicoop exclusivo desde APP BANCA CREDICOOP con MODO",
-      "bancoId": 35,
-      "icono": "logo_credicoop.png",
-      "textoOriginal": {
-        "textoDescuento": "30% DE DESCUENTO",
-        "observacion": "Sin tope de reintegro. Válido para el Sábado 21/11/2026 y Domingo 22/11/2026. Aplican exclusiones. Ver legales.",
-        "diasVigencia": "Sabado y Domingo"
       },
       "aVerificar": [
         "medioPago",
