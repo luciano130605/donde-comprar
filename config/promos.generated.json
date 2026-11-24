@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-23T23:40:10.711Z",
+  "generadoEl": "2026-11-24T22:09:22.579Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -1934,6 +1934,36 @@
       "aVerificar": [
         "medioPago",
         "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 40,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        4
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-sidecreer-nmbyyu",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Sidecreer",
+      "textoOriginal": {
+        "titulo": "Sidecreer Jueves",
+        "terms": "• Vigencia: los días “jueves” 19/11/2.026, 26/11/2.026, 03/12/2.026, 10/12/2.026, 17/12/2.026, 24/12/2.026 y 31/12/2.026.\n• Tipo de Productos admitidos: tarjetas SIDECREER Clásica/Común, Verde, Platinum, White/Blanca y Black, físicas y virtuales.\n• Cantidad de cuotas aceptadas: solo 3.\n• Bonificación/descuento comprometido – Clientes con nuevas cuentas (dadas de alta desde el 19/11/2.026 y durante toda la vigencia de la acción; o bien dadas de alta con anterioridad a dicho periodo, pero sin consumos de ningún tipo liquidados durante el año calendario 2.026): del cuarenta por ciento (40,00%) so"
+      },
+      "aVerificar": [
+        "medioPago",
         "minimo",
         "vigencia"
       ]
