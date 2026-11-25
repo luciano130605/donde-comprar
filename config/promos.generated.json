@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-24T22:09:22.579Z",
+  "generadoEl": "2026-11-25T21:32:15.457Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -70,6 +70,40 @@
       "aVerificar": [
         "medioPago",
         "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        3
+      ],
+      "canal": "online",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-471",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "En un pago si sos miembro de nuestra Comunidad. Con todos los medios de pago",
+      "bancoId": 0,
+      "icono": "logo_comunidad.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Siendo miembro de Comunidad Coto - Aplican exclusiones. Ver legales - Sin límite de reintegro.",
+        "diasVigencia": "Miercoles"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
         "vigencia"
       ]
     },
