@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-25T21:32:15.457Z",
+  "generadoEl": "2026-11-26T21:24:57.258Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -70,40 +70,6 @@
       "aVerificar": [
         "medioPago",
         "minimo",
-        "vigencia"
-      ]
-    },
-    {
-      "medioPago": null,
-      "tipo": "porcentaje",
-      "valor": 20,
-      "tope": null,
-      "topePeriodo": null,
-      "minimo": null,
-      "dias": [
-        3
-      ],
-      "canal": "online",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "coto-471",
-      "tienda": "coto",
-      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
-      "medioTexto": "En un pago si sos miembro de nuestra Comunidad. Con todos los medios de pago",
-      "bancoId": 0,
-      "icono": "logo_comunidad.png",
-      "textoOriginal": {
-        "textoDescuento": "20% DE DESCUENTO",
-        "observacion": "Siendo miembro de Comunidad Coto - Aplican exclusiones. Ver legales - Sin límite de reintegro.",
-        "diasVigencia": "Miercoles"
-      },
-      "aVerificar": [
-        "medioPago",
-        "minimo",
-        "tope",
         "vigencia"
       ]
     },
@@ -2091,72 +2057,6 @@
         "minimo",
         "vigencia"
       ]
-    },
-    {
-      "medioPago": null,
-      "tipo": null,
-      "valor": null,
-      "tope": 5000,
-      "topePeriodo": "transaccion",
-      "minimo": null,
-      "dias": [
-        0
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "dia-sidecreer-sizz4e",
-      "tienda": "dia",
-      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
-      "medioTexto": "Sidecreer",
-      "textoOriginal": {
-        "titulo": "Sidecreer BLACK",
-        "terms": "PROMOCIÓN PRODUCTO SIDECREER BLACK - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 25% DE DESCUENTO (CON TOPE DE $5.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/07/2026 AL 30/11/2026, AMBAS FECHAS INCLUSIVE; EN PROVINCIA DE ENTRE RÍOS, "
-      },
-      "aVerificar": [
-        "medioPago",
-        "valor",
-        "tipo",
-        "minimo",
-        "vigencia"
-      ],
-      "notas": "El texto legal menciona varios porcentajes (25, 0,00%): elegir el que corresponde."
-    },
-    {
-      "medioPago": null,
-      "tipo": null,
-      "valor": null,
-      "tope": 2000,
-      "topePeriodo": "transaccion",
-      "minimo": null,
-      "dias": [
-        0
-      ],
-      "canal": "presencial",
-      "acumulable": null,
-      "vigenteDesde": null,
-      "vigenteHasta": null,
-      "verificadaEl": null,
-      "revisar": true,
-      "id": "dia-sidecreer-16ea56n",
-      "tienda": "dia",
-      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
-      "medioTexto": "Sidecreer",
-      "textoOriginal": {
-        "titulo": "Sidecreer 10% VERDE",
-        "terms": "SIDECREER VERDE\n\nPROMOCIÓN PRODUCTOS SIDECREER VERDE Y SIDECREER COMÚN/CLÁSICA - DOMINGOS EN “TIENDAS DÍA” DE LA PROVINCIA DE ENTRE RÍOS – DE 2 A 3 CUOTAS SIN INTERÉS, MÁS 10% DE DESCUENTO (CON TOPE DE $2.000,00).\nSÓLO PARA CLIENTES QUE AL MOMENTO DE OPERAR SE ENCUENTREN AL DÍA CON SUS PRODUCTOS, SIN MOROSIDAD, CON LÍMITE DE COMPRA SUFICIENTE, EN TANTO SU SITUACIÓN DE REVISTA LABORAL/ADMINISTRATIVA RESULTE ADECUADA AL RESTO DE LAS CONDICIONES DE LA OPERATORIA. CARTERA: CONSUMO FAMILIAR. VIGENCIA Y CONDICIONES: ÚNICAMENTE LOS DÍAS “DOMINGO” QUE TRANSCURRAN DEL 01/07/2026 AL 30/11/2026, AMBAS FE"
-      },
-      "aVerificar": [
-        "medioPago",
-        "valor",
-        "tipo",
-        "minimo",
-        "vigencia"
-      ],
-      "notas": "El texto legal menciona varios porcentajes (10, 0,00%): elegir el que corresponde."
     },
     {
       "medioPago": null,
