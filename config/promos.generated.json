@@ -1,7 +1,7 @@
 {
   "revisar": true,
   "_aviso": "Generado automáticamente. No se usa en la web. Revisar con `npm run promos:revisar` y pasar a config/promos.json a mano.",
-  "generadoEl": "2026-11-26T21:24:57.258Z",
+  "generadoEl": "2026-11-27T21:08:34.394Z",
   "fuentes": [
     "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
     "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones"
@@ -475,6 +475,41 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-541",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. Utilizando todos los medios de pago dentro de la app",
+      "bancoId": 0,
+      "icono": "logo_mercadopago.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "No válido para venta online (Coto Digital). Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Sabado y Domingo"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "tope",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
       "valor": 30,
       "tope": null,
       "topePeriodo": null,
@@ -642,6 +677,40 @@
     {
       "medioPago": null,
       "tipo": "porcentaje",
+      "valor": 20,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-452",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito Visa y Mastercard",
+      "bancoId": 5,
+      "icono": "logo_icbc_1.png",
+      "textoOriginal": {
+        "textoDescuento": "20% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Válido para el Sábado 28/11/2026 y Domingo 29/11/2026. Aplican exclusiones. Ver legales.",
+        "diasVigencia": "Sabado y Domingo"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
       "valor": 25,
       "tope": null,
       "topePeriodo": null,
@@ -802,6 +871,39 @@
         "minimo",
         "vigencia",
         "dias"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 15,
+      "tope": null,
+      "topePeriodo": null,
+      "minimo": null,
+      "dias": [
+        5
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "coto-480",
+      "tienda": "coto",
+      "fuente": "https://www.coto.com.ar/rest/model/atg/actors/cProfileActor/getPromocionesMulticanal",
+      "medioTexto": "Exclusivo en sucursales. En un pago con tarjetas de crédito.",
+      "bancoId": 0,
+      "icono": "logo_tarjetascredito2.png",
+      "textoOriginal": {
+        "textoDescuento": "15% DE DESCUENTO",
+        "observacion": "Sin tope de reintegro. Aplican exclusiones. Ver legal.",
+        "diasVigencia": "Viernes"
+      },
+      "aVerificar": [
+        "medioPago",
+        "minimo",
+        "vigencia"
       ]
     },
     {
@@ -1934,6 +2036,37 @@
       "aVerificar": [
         "medioPago",
         "tope",
+        "minimo",
+        "vigencia"
+      ]
+    },
+    {
+      "medioPago": null,
+      "tipo": "porcentaje",
+      "valor": 50,
+      "tope": 25000,
+      "topePeriodo": "mes",
+      "minimo": null,
+      "dias": [
+        0,
+        6
+      ],
+      "canal": "presencial",
+      "acumulable": null,
+      "vigenteDesde": null,
+      "vigenteHasta": null,
+      "verificadaEl": null,
+      "revisar": true,
+      "id": "dia-banco-entre-rios-102ki6u",
+      "tienda": "dia",
+      "fuente": "https://diaonline.supermercadosdia.com.ar/medios-de-pago-y-promociones",
+      "medioTexto": "Banco Entre Rios",
+      "textoOriginal": {
+        "titulo": "Banco Entre Rios",
+        "terms": "VÁLIDO PARA CARTERA DE CONSUMO. VIGENCIA: TODOS LOS DÍAS SÁBADOS Y DOMINGOS DESDE EL 01/11/2026 HASTA EL 30/11/2026 INCLUSIVE, ABONANDO CON TARJETAS DE CRÉDITO VISA ASOCIADA A UNA CUENTA EMITIDAS POR EL BANCO DE ENTRE RIOS S.A., SIN CONTACTO DESDE EL CELULAR (VÍA NFC) A TRAVÉS DE APPLE PAY Y GOOGLE PAY. BENEFICIO: QUIEN REALICE EXITOSAMENTE UN PAGO SIN CONTACTO, CON UNA TARJETA DE CRÉDITO VISA ASOCIADA A UNA CUENTA (CUENTA SIMPLE, CUENTA PLUS, CUENTA PREFERENCIAL, CUENTA EXCELLENCE, CUENTA EMPRENDEDORES Y CUENTA EMPRENDEDORES PLUS) A TRAVÉS DE LAS BILLETERAS NFC, RECIBIRÁ UN DESCUENTO DEL 50% "
+      },
+      "aVerificar": [
+        "medioPago",
         "minimo",
         "vigencia"
       ]
